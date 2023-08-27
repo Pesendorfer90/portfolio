@@ -1,0 +1,67 @@
+main {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    header {
+        height: 50%;
+        min-height: 366px;
+
+        h1 {
+            font-family: 'syne';
+            font-weight: 800;
+            font-size: 128px;
+            margin-bottom: 0;
+            display: flex;
+            text-align: center;
+        }
+
+        .name-container {
+            display: flex;
+            justify-content: center;
+            font-family: 'overpass';
+            font-weight: 700;
+            font-size: 48px;
+            gap: 12px;
+
+            p {
+                text-align: center;
+                margin: 0;
+                color: #00BC8F;
+                ;
+            }
+
+            .border {
+                margin-top: 24px;
+                border-top: 3px solid black;
+                width: 450px;
+            }
+        }
+    }
+
+    .basic-information {
+        height: 50%;
+        width: 100%;
+        min-height: 480px;
+        font-size: 23px;
+        font-family: 'overpass';
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        p {
+            &:first-child {
+                writing-mode: vertical-lr;
+                transform: rotate(180deg);
+                padding-top: 4.55%;
+            }
+
+            &:nth-child(2) {
+                padding-right: 5%;
+                padding-bottom: 2%;
+            }
+        }
+    }
+}
