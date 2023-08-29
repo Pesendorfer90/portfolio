@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  navMenu() {
+    console.log('burger klick');
+    
+  }
 }

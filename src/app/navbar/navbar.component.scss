@@ -1,0 +1,37 @@
+.nav-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 92px;
+        background: #FFFCF3;
+
+        img {
+            height: 32px;
+        }
+    }
+}
+
+.menu-container {
+    width: 100vw;
+    height: calc(100vh - 92px);
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-footer {
+        display: flex;
+    }
+}
