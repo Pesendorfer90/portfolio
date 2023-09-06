@@ -1,18 +1,35 @@
 <div class="nav-container">
     <div class="top-bar">
         <img src="./assets/img/logo.png">
-        <img (click)="navMenu()" src="./assets/img/Property1.png">
+        <button [disabled]="buttonDisabled" (click)="navMenu()">
+            <img src="./assets/img/Property{{ burgerIndex }}.png">
+        </button>
     </div>
 </div>
 
-<div class="menu-container">
+<div [class.hide-menu]="menu" class="menu-container">
     <nav>
-        <a href="#">About me</a>
-        <a href="#">My skills</a>
-        <a href="#">Portfolio</a>
+        <div class="border">
+            <a href="#">About me</a>
+        </div>
+        <div class="border">
+            <a href="#">My skills</a>
+        </div>
+        <div class="border">
+            <a href="#">Portfolio</a>
+        </div>
     </nav>
     <div class="menu-footer">
-        <p>Say Hi!</p>
-        <a href= "mailto:pesendorfer.gerald@hotmail.com">pesendorfer.gerald@hotmail.com</a>
+        <div class="menu-footer-content">
+            <div>
+                <p>Say Hi!</p>
+                <a href="mailto:pesendorfer.gerald@hotmail.com">pesendorfer.gerald@hotmail.com</a>
+            </div>
+            <div class="footer-links">
+                <img src="./assets/img/github.png">
+                <img src="./assets/img/email.png">
+                <img src="./assets/img/linkedin.png">
+            </div>
+        </div>
     </div>
 </div>
