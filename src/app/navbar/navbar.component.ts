@@ -8,18 +8,14 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   public menu: boolean = false;
   public burgerIndex: number = 1;
-  public buttonDisabled: boolean = false;
+  public isAnimating: boolean = false;
 
   navMenu() {
-    console.log(this.buttonDisabled);
-    this.buttonDisabled = true;
-    console.log(this.buttonDisabled);
-    this.menu = !this.menu;
-    this.animateBurger();
-    setTimeout(() => {
-      this.buttonDisabled = false;
-      console.log(this.buttonDisabled);
-    }, 10.5)
+    if (!this.isAnimating) {
+      this.isAnimating = true;
+      this.menu = !this.menu;
+      this.animateBurger();
+    }
   }
 
   animateBurger() {
@@ -32,13 +28,13 @@ export class NavbarComponent {
 
   openBurger() {
     const interval = setInterval(() => {
-      this.burgerIndex < 5 ? this.burgerIndex++ : (clearInterval(interval));
+      this.burgerIndex < 5 ? this.burgerIndex++ : (clearInterval(interval), this.isAnimating = false);
     }, 56);
   }
 
   closeBurger() {
     const interval = setInterval(() => {
-      this.burgerIndex > 1 ? this.burgerIndex-- : (clearInterval(interval));
+      this.burgerIndex > 1 ? this.burgerIndex-- : (clearInterval(interval), this.isAnimating = false);
     }, 56);
   }
 }
