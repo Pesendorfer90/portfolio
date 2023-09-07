@@ -51,18 +51,42 @@ main {
         justify-content: space-between;
         align-items: flex-end;
 
-        p {
-            &:first-child {
-                writing-mode: vertical-lr;
-                transform: rotate(180deg);
-                padding-top: 4.55%;
-                margin: 0;
+        .email {
+            cursor: pointer;
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            padding-top: 4.55%;
+            margin: 0;
+        }
+
+        .info-right {
+            padding-right: 5%;
+            padding-bottom: 2%;
+
+            .animation-container {
+                height: 186px;
+                overflow: hidden;
+                position: relative;
+
+                img {
+
+                    position: absolute;
+                    top: -100px;
+                    animation: fall 2s linear infinite;
+
+                    @keyframes fall {
+                        0% {
+                            top: -100px;
+                        }
+
+                        100% {
+                            top: 800px;
+                        }
+                    }
+                }
             }
 
-            &:nth-child(2) {
-                padding-right: 5%;
-                padding-bottom: 2%;
-            }
+
         }
     }
 }

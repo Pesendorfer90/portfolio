@@ -1,0 +1,63 @@
+.introduction-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-family: Syne;
+        font-size: 78px;
+        font-weight: 800;
+    }
+
+    .introduction-info {
+        display: flex;
+        justify-content: space-between;
+
+        .introduction-text {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 530px;
+
+            span {
+                font-family: Overpass;
+                font-size: 23px;
+                text-align: left;
+                height: 50%;
+            }
+
+            .button-container {
+                display: flex;
+                justify-content: center;
+                height: 50%;
+
+                button {
+                    width: 213px;
+                    height: 68px;
+                    font-family: Overpass;
+                    font-size: 23px;
+                    font-weight: 400;
+                    border: 4px solid black;
+                    transition: 0.1s ease-out;
+
+                    &:hover {
+                        width: 268px;
+                        font-weight: 700;
+                    }
+
+                    &:active {
+                        background-color: black;
+                        color: #FFFCF3;
+                        width: 268px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+
+    img {
+        height: 530px;
+        padding-left: 5%;
+    }
+}
