@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { ArrowComponent } from './arrow/arrow.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavbarComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    ArrowComponent
   ],
   imports: [
     BrowserModule,
