@@ -1,0 +1,22 @@
+<div class="portfolio-container">
+    <div class="portfolio-header">
+        <h2>Portfolio</h2>
+        <p>This page is a sample of my work - please feel free to try them out.</p>
+    </div>
+
+    <div class="portfolio-list"></div>
+
+    <div class="container">
+        <div *ngFor="let item of items; let i = index" class="item" [class.reverse]="i % 2 === 1">
+          <div class="image">
+            <img src="{{ item.image }}" alt="Bild {{ i + 1 }}">
+          </div>
+          <div class="text">
+            {{ item.text }}
+          </div>
+        </div>
+      </div>
+
+
+
+</div>

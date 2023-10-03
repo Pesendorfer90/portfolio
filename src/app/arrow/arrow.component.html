@@ -1,7 +1,8 @@
 <div class="arrow-container">
-    <div class="arrow "> 
-        <!-- arrowAnimation-Container -->
-        <div class="line arrow-animation"></div>
+    <div [class.arrowAnimation-Container]="arrowTrigger" class="arrow"> 
+        <!--  -->
+        <div [class.arrow-animation]="arrowTrigger" class="line"></div>
+        <!--  -->
         <div class="line"></div>
         <div class="line"></div>
     </div>

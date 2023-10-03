@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ArrowComponent } from './arrow/arrow.component';
+import { MySkillsComponent } from './my-skills/my-skills.component';
+import { Arrow2Component } from './arrow2/arrow2.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ArrowComponent } from './arrow/arrow.component';
     HeaderComponent,
     NavbarComponent,
     AboutMeComponent,
-    ArrowComponent
+    ArrowComponent,
+    MySkillsComponent,
+    Arrow2Component,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
