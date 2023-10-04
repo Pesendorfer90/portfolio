@@ -1,61 +1,163 @@
 .portfolio-container {
-    width: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 400px;
+
+  .portfolio-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 400px;
+    width: 530px;
+    margin-bottom: 100px;
 
-    .portfolio-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 530px;
+    h2 {
+      font-family: Syne;
+      font-size: 78px;
+      font-weight: 800;
+      margin: 20px 0 35px 0;
+      align-items: center;
+    }
 
-        h2 {
-            font-family: Syne;
-            font-size: 78px;
-            font-weight: 800;
-            margin: 20px 0 35px 0;
-            align-items: center;
+    p {
+      font-family: Overpass;
+      font-size: 23px;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
+  .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .projects {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      max-width: 1440px;
+      height: 500px;
+      margin: 10px;
+      padding: 10px;
+
+      &:hover .pointer {
+        opacity: 1 !important;
+      }
+
+      .image {
+        width: 50%;
+        position: relative;
+
+        &::before {
+          content: attr(href);
+          position: absolute;
+          border: 4px solid black;
+          top: 20px;
+          left: 20px;
+          width: 100%;
+          height: 100%;
+          opacity: 0.0;
+          transition: opacity 0.19s ease-in-out;
+          z-index: 1;
         }
 
-        p {
+
+        &:hover::before {
+          opacity: 1;
+        }
+
+        img {
+          flex: 1;
+          width: 100%;
+          position: relative;
+        }
+
+        img:first-child {
+          width: 100%;
+        }
+
+        .pointer {
+          height: 75px;
+          width: 75px;
+          z-index: 2;
+          position: absolute;
+          top: 45%;
+          right: calc(0px - 37.5px - 26px);
+          transition: opacity 0.19s ease-in-out;
+          opacity: 0.2;
+
+          // &:hover {
+          //   opacity: 1;
+          // }
+        }
+      }
+
+      .text {
+        flex: 1;
+        width: 50%;
+        height: 100%;
+        padding-left: 150px;
+        position: relative;
+
+        .count {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-family: Syne;
+          font-size: 48px;
+          font-weight: 700;
+        }
+
+        .description {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-top: 30px;
+
+          h3 {
+            font-family: Syne;
+            font-size: 45px;
+            font-weight: 800;
+            text-align: left;
+          }
+
+          span {
             font-family: Overpass;
             font-size: 23px;
             font-weight: 400;
-            margin: 0;
+            color: #00BC8F;
+            text-align: left;
+          }
+
+          p {
+            font-family: Overpass;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: left;
+
+          }
+
+          .github-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid black;
+            width: 189px;
+            height: 68px;
+            font-family: Overpass;
+            font-size: 23px;
+            font-weight: 400;
+          }
         }
+      }
     }
 
-    // .portfolio-list {
-
-    // }
-
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 10px;
-        padding: 10px;
-      }
-      
-      .item.reverse {
-        flex-direction: row-reverse;
-      }
-      
-      img {
-        flex: 1;
-        width: 600px;
-      }
-      
-      .text {
-        flex: 1;
-        text-align: center;
-      }
+    .projects.reverse {
+      flex-direction: row-reverse;
+    }
+  }
 }
