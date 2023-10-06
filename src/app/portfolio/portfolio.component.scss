@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 400px;
 
   .portfolio-header {
     display: flex;
@@ -18,6 +17,11 @@
       font-weight: 800;
       margin: 20px 0 35px 0;
       align-items: center;
+
+      &:hover {
+        transition: color 0.190s ease-in-out;
+        color: #00BC8F;
+      }
     }
 
     p {
@@ -42,9 +46,24 @@
       height: 500px;
       margin: 10px;
       padding: 10px;
+      margin-bottom: 70px;
 
-      &:hover .pointer {
-        opacity: 1 !important;
+      &:hover {
+        .pointer {
+          opacity: 1 !important;
+          height: 75px !important;
+          width: 75px !important;
+          transform: translate(+50%, -50%) rotate(0deg) !important;
+          // animation: pointerAnimation 0.38s ease-in-out forwards;
+        }
+
+        .image::before {
+          opacity: 1;
+        }
+
+        .description {
+          transform: translate(0%) !important;
+        }
       }
 
       .image {
@@ -61,37 +80,26 @@
           height: 100%;
           opacity: 0.0;
           transition: opacity 0.19s ease-in-out;
-          z-index: 1;
-        }
-
-
-        &:hover::before {
-          opacity: 1;
+          z-index: 2;
         }
 
         img {
           flex: 1;
           width: 100%;
           position: relative;
-        }
-
-        img:first-child {
-          width: 100%;
+          z-index: 1;
         }
 
         .pointer {
-          height: 75px;
-          width: 75px;
-          z-index: 2;
+          height: 48px;
+          width: 48px;
+          z-index: 3;
+          transform: translate(+50%, -50%) rotate(135deg);
           position: absolute;
-          top: 45%;
-          right: calc(0px - 37.5px - 26px);
-          transition: opacity 0.19s ease-in-out;
-          opacity: 0.2;
-
-          // &:hover {
-          //   opacity: 1;
-          // }
+          top: 50%;
+          right: calc(0px - 26px);
+          transition: all 0.19s ease-in-out;
+          opacity: 0.0;
         }
       }
 
@@ -117,6 +125,8 @@
           flex-direction: column;
           justify-content: center;
           padding-top: 30px;
+          transform: translate(-140%);
+          transition: all 0.19s ease-in-out;
 
           h3 {
             font-family: Syne;
@@ -151,13 +161,198 @@
             font-family: Overpass;
             font-size: 23px;
             font-weight: 400;
+            transition: 0.1s ease-out;
+
+            &:hover {
+              width: 238px;
+              font-weight: 700;
+            }
+
+            &:active {
+              background-color: black;
+              color: #FFFCF3;
+              width: 238px;
+              font-weight: 400;
+            }
           }
         }
       }
     }
 
-    .projects.reverse {
+    .projects-reverse {
+      display: flex;
       flex-direction: row-reverse;
+      align-items: center;
+      max-width: 1440px;
+      height: 500px;
+      margin: 10px;
+      padding: 10px;
+      margin-bottom: 70px;
+
+      &:hover {
+        .pointer {
+          opacity: 1 !important;
+          height: 75px !important;
+          width: 75px !important;
+          transform: translate(-50%, -50%) rotate(270deg) !important;
+          // animation: pointerAnimation 0.38s ease-in-out forwards;
+        }
+
+        @keyframes pointerAnimation {
+          50% {
+            opacity: 1 !important;
+            height: 75px !important;
+            width: 75px !important;
+            transform: translate(+50%, -50%) rotate(135deg) !important;
+          }
+
+          100% {
+            transform: translate(+50%, -50%) rotate(0deg) !important;
+          }
+        }
+
+        .image::before {
+          opacity: 1;
+        }
+
+        .description {
+          transform: translate(0%) !important;
+        }
+      }
+
+      .image {
+        width: 50%;
+        position: relative;
+
+        &::before {
+          content: attr(href);
+          position: absolute;
+          border: 4px solid black;
+          top: 20px;
+          right: 20px;
+          width: 100%;
+          height: 100%;
+          opacity: 0.0;
+          transition: opacity 0.19s ease-in-out;
+          z-index: 2;
+        }
+
+        img {
+          flex: 1;
+          width: 100%;
+          position: relative;
+          z-index: 1;
+        }
+
+        .pointer {
+          height: 48px;
+          width: 48px;
+          z-index: 3;
+          transform: translate(-50%, -50%) rotate(135deg);
+          position: absolute;
+          top: 50%;
+          left: calc(0px - 26px);
+          transition: all 0.19s ease-in-out;
+          opacity: 0.0;
+        }
+      }
+
+      .text {
+        flex: 1;
+        width: 50%;
+        height: 100%;
+        padding-right: 150px;
+        position: relative;
+
+        .count {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-family: Syne;
+          font-size: 48px;
+          font-weight: 700;
+        }
+
+        .description {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-top: 30px;
+          transform: translate(+140%);
+          transition: all 0.19s ease-in-out;
+
+          h3 {
+            font-family: Syne;
+            font-size: 45px;
+            font-weight: 800;
+            text-align: left;
+          }
+
+          span {
+            font-family: Overpass;
+            font-size: 23px;
+            font-weight: 400;
+            color: #00BC8F;
+            text-align: left;
+          }
+
+          p {
+            font-family: Overpass;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: left;
+
+          }
+
+          .github-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid black;
+            width: 189px;
+            height: 68px;
+            font-family: Overpass;
+            font-size: 23px;
+            font-weight: 400;
+            transition: 0.1s ease-out;
+
+            &:hover {
+              width: 238px;
+              font-weight: 700;
+            }
+
+            &:active {
+              background-color: black;
+              color: #FFFCF3;
+              width: 238px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
     }
+  }
+}
+
+
+
+@keyframes pointerAnimation {
+  0% {
+    opacity: 0 !important;
+    height: 75px !important;
+    width: 75px !important;
+    transform: translate(+50%, -50%) rotate(135deg) !important;
+  }
+
+  50% {
+    opacity: 1 !important;
+    height: 75px !important;
+    width: 75px !important;
+    transform: translate(+50%, -50%) rotate(135deg) !important;
+  }
+
+  100% {
+    transform: translate(+50%, -50%) rotate(0deg) !important;
   }
 }

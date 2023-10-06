@@ -1,8 +1,8 @@
 .arrow-container {
-    width: 70%;
+    width: 80%;
     height: 282px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 
     .arrow {
         position: relative;
@@ -18,27 +18,27 @@
             width: 215px;
             height: 4px;
             top: 107.50px;
-            right: 0px;
-            transform: rotate(-45deg);
+            left: 0px;
+            transform: rotate(45deg);
         }
 
         .line:nth-child(2) {
             width: 80px;
             height: 4px;
             bottom: 65px;
-            left: -9px;
-            transform: rotate(-90deg);
+            right: -9px;
+            transform: rotate(90deg);
         }
 
         .line:nth-child(3) {
             width: 80px;
             height: 4px;
             bottom: 27px;
-            left: 29px;
+            right: 29px;
         }
 
         .arrow-animation {
-            animation: arrowAnimation 0.5s ease-in-out forwards; // ;infinite forwards
+            animation: arrowAnimation 0.5s ease-in-out forwards;
         }
 
         @keyframes arrowAnimation {
@@ -49,13 +49,13 @@
             50% {
                 width: 310px;
                 top: 140.50px;
-                right: -14px;
+                left: -14px;
             }
 
             100% {
                 width: 215px;
                 top: 175.50px;
-                right: 68.5px;
+                left: 68.5px;
             }
         }
     }
