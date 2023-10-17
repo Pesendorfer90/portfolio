@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-arrow2',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./arrow2.component.scss']
 })
 export class Arrow2Component {
-
+  @Input() arrowTrigger2: boolean;
 }

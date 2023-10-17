@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,5 @@ export class AppComponent {
   title = 'portfolio';
 
   public isArrowVisible: boolean = false;
+  public isArrowVisible2: boolean = false;
 }

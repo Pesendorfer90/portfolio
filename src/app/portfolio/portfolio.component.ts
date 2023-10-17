@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements AfterViewInit {
   items = [
     {
       image: './assets/img/portfolio-img/epl.png',
@@ -38,4 +38,42 @@ export class PortfolioComponent {
       description: ''
     }
   ];
+
+  @ViewChild('arrowTrigger') arrowTrigger!: ElementRef;
+  @Output() visible2 = new EventEmitter<boolean>();
+
+
+  ngAfterViewInit() {
+    this.updateVisibility();
+  }
+
+
+  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:resize', ['$event'])
+
+
+  onWindowChange() {
+    this.updateVisibility();
+  }
+
+
+  updateVisibility() {
+    this.visible2.emit(this.isElementVisible());
+  }
+  
+
+  isElementVisible(): boolean {
+    const element = this.arrowTrigger.nativeElement;
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+  
+    const isVisible =
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= windowHeight &&
+      rect.right <= windowWidth;
+  
+    return isVisible;
+  }
 }

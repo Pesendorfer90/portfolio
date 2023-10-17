@@ -10,6 +10,8 @@ import { ArrowComponent } from './arrow/arrow.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { Arrow2Component } from './arrow2/arrow2.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { Arrow3Component } from './arrow3/arrow3.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     ArrowComponent,
     MySkillsComponent,
     Arrow2Component,
-    PortfolioComponent
+    PortfolioComponent,
+    Arrow3Component,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

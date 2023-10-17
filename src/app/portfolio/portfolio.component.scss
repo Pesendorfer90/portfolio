@@ -37,7 +37,6 @@
     flex-direction: column;
     align-items: center;
 
-
     .projects {
       display: flex;
       flex-direction: row;
@@ -54,7 +53,6 @@
           height: 75px !important;
           width: 75px !important;
           transform: translate(+50%, -50%) rotate(0deg) !important;
-          // animation: pointerAnimation 0.38s ease-in-out forwards;
         }
 
         .image::before {
@@ -195,20 +193,6 @@
           height: 75px !important;
           width: 75px !important;
           transform: translate(-50%, -50%) rotate(270deg) !important;
-          // animation: pointerAnimation 0.38s ease-in-out forwards;
-        }
-
-        @keyframes pointerAnimation {
-          50% {
-            opacity: 1 !important;
-            height: 75px !important;
-            width: 75px !important;
-            transform: translate(+50%, -50%) rotate(135deg) !important;
-          }
-
-          100% {
-            transform: translate(+50%, -50%) rotate(0deg) !important;
-          }
         }
 
         .image::before {
@@ -332,27 +316,5 @@
         }
       }
     }
-  }
-}
-
-
-
-@keyframes pointerAnimation {
-  0% {
-    opacity: 0 !important;
-    height: 75px !important;
-    width: 75px !important;
-    transform: translate(+50%, -50%) rotate(135deg) !important;
-  }
-
-  50% {
-    opacity: 1 !important;
-    height: 75px !important;
-    width: 75px !important;
-    transform: translate(+50%, -50%) rotate(135deg) !important;
-  }
-
-  100% {
-    transform: translate(+50%, -50%) rotate(0deg) !important;
   }
 }

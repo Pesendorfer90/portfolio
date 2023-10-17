@@ -1,8 +1,9 @@
 .arrow-container {
-    width: 80%;
+    width: 90%;
     height: 282px;
     display: flex;
     justify-content: flex-start;
+    max-width: 1140px;
 
     .arrow {
         position: relative;
