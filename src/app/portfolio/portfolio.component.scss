@@ -55,6 +55,10 @@
           transform: translate(+50%, -50%) rotate(0deg) !important;
         }
 
+        .image img {
+          filter: grayscale(0) !important;
+        }
+
         .image::before {
           opacity: 1;
         }
@@ -86,6 +90,7 @@
           width: 100%;
           position: relative;
           z-index: 1;
+          filter: grayscale(1);
         }
 
         .pointer {
@@ -195,6 +200,10 @@
           transform: translate(-50%, -50%) rotate(270deg) !important;
         }
 
+        .image img {
+          filter: grayscale(0) !important;
+        }
+
         .image::before {
           opacity: 1;
         }
@@ -226,6 +235,7 @@
           width: 100%;
           position: relative;
           z-index: 1;
+          filter: grayscale(1) !important;
         }
 
         .pointer {

@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
-
+  isHovered: boolean = false;
+  nameFocus: boolean = false;
+  emailFocus: boolean = false;
+  messageFocus: boolean = false;
 }
