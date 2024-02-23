@@ -10,7 +10,7 @@
             <p>Say hello! let's discuss your ideas and make it happen</p>
             <div class="input-container">
                 <div class="befor-container" [ngClass]="{'input-focus input-name': nameFocus}">
-                    <input class="name" type="text" placeholder="Your name" (focus)='nameFocus = true'
+                    <input #formularName class="name" type="text" placeholder="Your name" (focus)='nameFocus = true'
                         (focusout)='nameFocus = false'>
                     <div class="status-img-container">
                         <img src="./../../assets/img/contact/ok.png">
