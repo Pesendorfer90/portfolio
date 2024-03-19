@@ -9,28 +9,64 @@
             <h3>Want to discuss a new project?</h3>
             <p>Say hello! let's discuss your ideas and make it happen</p>
             <div class="input-container">
-                <div class="befor-container" [ngClass]="{'input-focus input-name': nameFocus}">
-                    <input #formularName class="name" type="text" placeholder="Your name" (focus)='nameFocus = true'
-                        (focusout)='nameFocus = false'>
-                    <div class="status-img-container">
-                        <img src="./../../assets/img/contact/ok.png">
+
+                <form [formGroup]="meinFormular">
+                    <div class="befor-container" [ngClass]="{'input-focus input-name': nameFocus}">
+                        <input #name formControlName="name" class="name" type="text" placeholder="Your name"
+                            (focus)='nameFocus = true' (focusout)='nameFocus = false'>
+                        <div class="status-img-container">
+                            <img *ngIf="meinFormular.get('name').invalid && (meinFormular.get('name').dirty || meinFormular.get('name').touched)"
+                                src="./../../assets/img/contact/error.png">
+                            <img *ngIf="meinFormular.get('name').valid" src="./../../assets/img/contact/ok.png">
+                        </div>
+                        <div class="error-message-container" [ngClass]="{'error-active': meinFormular.get('name').invalid &&
+                            (meinFormular.get('name').dirty || meinFormular.get('name').touched)}">
+                            <div class="error-message-active" *ngIf="meinFormular.get('name').invalid &&
+                            (meinFormular.get('name').dirty || meinFormular.get('name').touched)">
+                                Your name is required
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="befor-container" [ngClass]="{'input-focus input-email': emailFocus}">
-                    <input class="email" type="email" placeholder="Your email" (focus)='emailFocus = true'
-                        (focusout)='emailFocus = false'>
-                    <div class="status-img-container">
-                        <img src="./../../assets/img/contact/ok.png">
+
+                    <div class="befor-container" [ngClass]="{'input-focus input-email': emailFocus}">
+                        <input #email formControlName="email" class="email" type="email" placeholder="Your email"
+                            (focus)='emailFocus = true' (focusout)='emailFocus = false'>
+                        <div class="status-img-container">
+                            <img *ngIf="meinFormular.get('email').invalid && (meinFormular.get('email').dirty || meinFormular.get('email').touched)"
+                                src="./../../assets/img/contact/error.png">
+                            <img *ngIf="meinFormular.get('email').valid" src="./../../assets/img/contact/ok.png">
+                        </div>
+                        <div class="error-message-container" [ngClass]="{'error-active': meinFormular.get('email').invalid &&
+                        (meinFormular.get('email').dirty || meinFormular.get('email').touched)}">
+                            <div class="error-message-active" *ngIf="meinFormular.get('email').invalid &&
+                        (meinFormular.get('email').dirty || meinFormular.get('email').touched)">
+                                Your email is required
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="befor-container" [ngClass]="{'input-focus input-message': messageFocus}">
-                    <div class="pull-tab"></div>
-                    <textarea class="message" type="text" placeholder="Your message" (focus)='messageFocus = true'
-                        (focusout)='messageFocus = false'></textarea>
-                    <div class="status-img-container">
-                        <img src="./../../assets/img/contact/ok.png">
+
+                    <div class="befor-container" [ngClass]="{'input-focus input-message': messageFocus}">
+                        <div class="pull-tab"></div>
+                        <textarea #message formControlName="message" class="message" type="text"
+                            placeholder="Your message" (focus)='messageFocus = true'
+                            (focusout)='messageFocus = false'></textarea>
+                        <div class="status-img-container">
+                            <img *ngIf="meinFormular.get('message').invalid && (meinFormular.get('message').dirty || meinFormular.get('message').touched)"
+                                src="./../../assets/img/contact/error.png">
+                            <img *ngIf="meinFormular.get('message').valid" src="./../../assets/img/contact/ok.png">
+                        </div>
+
+                        <div class="error-message-container" [ngClass]="{'error-active': meinFormular.get('message').invalid &&
+                            (meinFormular.get('message').dirty || meinFormular.get('message').touched)}">
+                            <div class="error-message-active" *ngIf="meinFormular.get('message').invalid &&
+                            (meinFormular.get('message').dirty || meinFormular.get('message').touched)">
+                                Your message is empty
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                </form>
+
                 <div class="privacy-policy-box">
                     <div class="agree-hover" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
                         <label class="agree-box">

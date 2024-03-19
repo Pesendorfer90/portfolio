@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContactForm } from '../contact-form';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -13,11 +13,28 @@ export class ContactComponent {
   emailFocus: boolean = false;
   messageFocus: boolean = false;
 
-  messageData = new ContactForm('ABC', 'DEF', 'GHI');
+  meinFormular: FormGroup;
+  name: FormControl;
+  email: FormControl;
+  message: FormControl;
 
-  submitted = false;
+  constructor() {
+    this.name = new FormControl('', [Validators.required, Validators.minLength(5)]);
+    this.email = new FormControl('', [Validators.required, Validators.email]);
+    this.message = new FormControl('', [Validators.required, Validators.minLength(10)]);
 
-  onSubmit() { this.submitted = true; }
+    this.meinFormular = new FormGroup({
+      name: this.name,
+      email: this.email,
+      message: this.message
+    });
+  }
+}
+  // messageData = new ContactForm('ABC', 'DEF', 'GHI');
+
+  // submitted = false;
+
+  // onSubmit() { this.submitted = true; }
 
   // setValue() {
   //   this.contact.name = '';
@@ -34,4 +51,4 @@ export class ContactComponent {
 
 
 // Letzter ChatGPT eintrag BEACHTEN dort steht die LÖSUNG
-}
+// }
