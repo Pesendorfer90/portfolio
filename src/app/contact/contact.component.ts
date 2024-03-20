@@ -17,19 +17,34 @@ export class ContactComponent {
   name: FormControl;
   email: FormControl;
   message: FormControl;
+  checkBox: FormControl;
 
   constructor() {
     this.name = new FormControl('', [Validators.required, Validators.minLength(5)]);
     this.email = new FormControl('', [Validators.required, Validators.email]);
     this.message = new FormControl('', [Validators.required, Validators.minLength(10)]);
+    this.checkBox = new FormControl('', Validators.required);
 
     this.meinFormular = new FormGroup({
       name: this.name,
       email: this.email,
-      message: this.message
+      message: this.message,
+      checkBox: this.checkBox
     });
+    console.log(this.meinFormular.value);
   }
+
+  logFormValue() {
+    console.log(this.meinFormular.value);
+  }
+
+  // onCheckboxChange() {
+  //   this.checkBox = this.checkBox.value ? this.checkBox.value : null;
+  // }
 }
+
+
+
   // messageData = new ContactForm('ABC', 'DEF', 'GHI');
 
   // submitted = false;
