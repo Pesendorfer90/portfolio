@@ -70,7 +70,7 @@
                     <div class="privacy-policy-box">
                         <div class="agree-hover" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
                             <label class="agree-box">
-                                <input type="checkbox" formControlName="checkBox"><!--  (change)="onCheckboxChange()" -->
+                                <input type="checkbox" (change)="onCheckboxChange()" formControlName="checkBox"><!--  (change)="onCheckboxChange()" -->
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -82,19 +82,6 @@
                     </div>
                 </form>
                 <button (click)="logFormValue()" [ngClass]="{'active': meinFormular.valid}" [disabled]="!meinFormular.valid">Send Message</button>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="footer-links">
-                <a href="#">
-                    <img src="./assets/img/github.png">
-                </a>
-                <a href="#">
-                    <img src="./assets/img/email.png">
-                </a>
-                <a href="#">
-                    <img src="./assets/img/linkedin.png">
-                </a>
             </div>
         </div>
     </div>

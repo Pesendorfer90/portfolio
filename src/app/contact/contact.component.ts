@@ -38,32 +38,10 @@ export class ContactComponent {
     console.log(this.meinFormular.value);
   }
 
-  // onCheckboxChange() {
-  //   this.checkBox = this.checkBox.value ? this.checkBox.value : null;
-  // }
+  onCheckboxChange() {
+    if (!this.meinFormular.get('checkBox').value) {
+      this.meinFormular.get('checkBox').setValue('');
+      console.log(this.meinFormular.get('checkBox').value);
+    }    
+  }
 }
-
-
-
-  // messageData = new ContactForm('ABC', 'DEF', 'GHI');
-
-  // submitted = false;
-
-  // onSubmit() { this.submitted = true; }
-
-  // setValue() {
-  //   this.contact.name = '';
-  // }
-
-
-//  zum testen 
-//   const myContact = new ContactForm
-//   ('SkyDog', 'Fetch any object at any distance', 'Leslie Rollover');
-
-// console.log('My CONTACT is called ' + myContact.name);
-
-
-
-
-// Letzter ChatGPT eintrag BEACHTEN dort steht die LÖSUNG
-// }

@@ -13,6 +13,7 @@ import { Arrow2Component } from './arrow2/arrow2.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { Arrow3Component } from './arrow3/arrow3.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ContactComponent } from './contact/contact.component';
     Arrow2Component,
     PortfolioComponent,
     Arrow3Component,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
