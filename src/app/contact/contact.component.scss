@@ -140,7 +140,6 @@
                 }
 
                 .error-active {
-
                     animation: slide-out 0.2s ease-in-out forwards;
                 }
 
@@ -245,7 +244,7 @@
                 }
 
                 .active {
-                    animation: button-active 0.92 ease-in-out forwards;
+                    animation: button-active 0.2s ease-in-out forwards;
                 }
             }
         }
