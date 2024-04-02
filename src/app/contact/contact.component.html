@@ -10,7 +10,88 @@
             <p>Say hello! let's discuss your ideas and make it happen</p>
             <div class="input-container">
 
-                <form [formGroup]="meinFormular">
+                <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                    <div class="befor-container" [ngClass]="{'input-focus input-name': nameFocus}">
+                        <input #name="ngModel" [(ngModel)]="contactData.name" class="name" type="text" name="name"
+                            placeholder="Your name" (focus)='nameFocus = true' (focusout)='nameFocus = false'
+                            minlength="4" required>
+                        <div class="status-img-container">
+                            <img *ngIf="name.invalid && (name.dirty || name.touched)" src="./../../assets/img/contact/error.png">
+                            <img *ngIf="name.valid" src="./../../assets/img/contact/ok.png">
+                        </div>
+                    </div>
+
+                    <div class="error-message-container" [ngClass]="{'error-active': name.invalid &&
+                            (name.dirty || name.touched)}">
+                            <div class="error-message-active" *ngIf="name.invalid &&
+                            (name.dirty || name.touched)">
+                                Your name is required
+                            </div>
+                        </div>
+
+                    <div class="befor-container" [ngClass]="{'input-focus input-email': emailFocus}">
+                        <input #email="ngModel" [(ngModel)]="contactData.email" class="email" type="email" name="email"
+                            placeholder="Your email" (focus)='emailFocus = true' (focusout)='emailFocus = false'
+                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                        <div class="status-img-container">
+                            <img *ngIf="email.invalid && (email.dirty || email.touched)" src="./../../assets/img/contact/error.png">
+                            <img *ngIf="email.valid" src="./../../assets/img/contact/ok.png">
+                        </div>
+                    </div>
+
+                    <div class="error-message-container" [ngClass]="{'error-active':email.invalid &&
+                            (email.dirty || email.touched)}">
+                            <div class="error-message-active" *ngIf="email.invalid &&
+                            (email.dirty || email.touched)">
+                                Your email is required
+                            </div>
+                        </div>
+
+                    <div class="befor-container" [ngClass]="{'input-focus input-message': messageFocus}">
+                        <div class="pull-tab"></div>
+                        <textarea #message="ngModel" [(ngModel)]="contactData.message" class="message" type="text"
+                            name="message" placeholder="Your message" (focus)='messageFocus = true'
+                            (focusout)='messageFocus = false' minlength="10" required></textarea>
+                        <div class="status-img-container">
+                            <img *ngIf="message.invalid && (message.dirty || message.touched)" src="./../../assets/img/contact/error.png">
+                            <img *ngIf="message.valid" src="./../../assets/img/contact/ok.png">
+                        </div>
+                    </div>
+                        
+                        <div class="error-message-container" [ngClass]="{'error-active': message.invalid &&
+                                (message.dirty || message.touched)}">
+                            <div class="error-message-active" *ngIf="message.invalid &&
+                                (message.dirty || message.touched)">
+                                Your message is empty
+                            </div>
+                        </div>
+
+                    <div class="privacy-policy-box">
+                        <div class="agree-hover" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
+                            <label class="agree-box">
+                                <input #privatePolicy="ngModel" type="checkbox" [(ngModel)]="contactData.privatPolicy" name="privatPolicy"
+                                    required>
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <p>I've read the</p>
+                        <div class="privacy-policy-link"><a [ngClass]="{'hovered': isHovered}" href="#">privacy
+                                policy</a>
+                        </div>
+                        <p> and agree to the processing of my data as outlined.</p>
+                    </div>
+                    <div class="button-container">
+                        <!-- HIER WEITER MACHEN -->
+                        <button [ngClass]="{'active': [name.valid, email.valid, message.valid, privatePolicy.valid]}" type="submit">Send Message</button>
+                    </div>
+                </form>
+
+
+
+
+
+
+                <!-- <form [formGroup]="meinFormular">
                     <div class="befor-container" [ngClass]="{'input-focus input-name': nameFocus}">
                         <input #name formControlName="name" class="name" type="text" placeholder="Your name"
                             (focus)='nameFocus = true' (focusout)='nameFocus = false'>
@@ -80,8 +161,12 @@
                         </div>
                         <p> and agree to the processing of my data as outlined.</p>
                     </div>
-                </form>
-                <button (click)="logFormValue()" [ngClass]="{'active': meinFormular.valid}" [disabled]="!meinFormular.valid">Send Message</button>
+                    <div class="button-container">
+                        <button (click)="logFormValue()" [ngClass]="{'active': meinFormular.valid}"
+                            [disabled]="!meinFormular.valid">Send Message</button>
+                    </div>
+                </form> -->
+                <!-- <button (click)="logFormValue()" [ngClass]="{'active': meinFormular.valid}" [disabled]="!meinFormular.valid">Send Message</button> -->
             </div>
         </div>
     </div>
