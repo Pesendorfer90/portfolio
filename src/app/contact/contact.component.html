@@ -81,8 +81,7 @@
                         <p> and agree to the processing of my data as outlined.</p>
                     </div>
                     <div class="button-container">
-                        <!-- HIER WEITER MACHEN -->
-                        <button [ngClass]="{'active': [name.valid, email.valid, message.valid, privatePolicy.valid]}" type="submit">Send Message</button>
+                        <button [ngClass]="{'active': name.valid &&email.valid && message.valid && privatePolicy.valid}" type="submit">Send Message</button>
                     </div>
                 </form>
 

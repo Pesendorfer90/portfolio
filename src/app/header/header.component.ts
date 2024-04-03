@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { scrollToElement } from '../functions';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+// Hier weiter machen
 }

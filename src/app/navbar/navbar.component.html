@@ -9,13 +9,13 @@
 
 <div [class.hide-menu]="menu" class="menu-container">
     <nav>
-        <div class="border">
-            <a href="#">About me</a>
+        <div (click)="scrollToArea('aboutMe')" class="border">
+            <a>About me</a>
         </div>
-        <div class="border">
+        <div (click)="scrollToArea('mySkills')" class="border">
             <a href="#">My skills</a>
         </div>
-        <div class="border">
+        <div (click)="scrollToArea('portfolio')" class="border">
             <a href="#">Portfolio</a>
         </div>
     </nav>
@@ -26,13 +26,13 @@
                 <a href="mailto:pesendorfer.gerald@hotmail.com">pesendorfer.gerald@hotmail.com</a>
             </div>
             <div class="footer-links">
-                <a class="link1" href="#">
+                <a class="link1" href="https://github.com/Pesendorfer90" target="_blank">
                     <img src="./assets/img/github.png">
                 </a>
-                <a class="link2" href="#">
+                <a class="link2" href="mailto:pesendorfer.gerald@hotmail.com" target="_blank">
                     <img src="./assets/img/email.png">
                 </a>
-                <a class="link3" href="#">
+                <a class="link3" href="https://www.linkedin.com/in/gerald-pesendorfer-432091246/" target="_blank">
                     <img src="./assets/img/linkedin.png">
                 </a>
             </div>

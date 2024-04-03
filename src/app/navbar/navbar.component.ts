@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { scrollToElement } from '../functions';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +10,11 @@ export class NavbarComponent {
   public menu: boolean = false;
   public burgerIndex: number = 1;
   public isAnimating: boolean = false;
+
+  scrollToArea(link: string) {
+    this.navMenu();
+    scrollToElement(link);
+  }
 
   navMenu() {
     if (!this.isAnimating) {
