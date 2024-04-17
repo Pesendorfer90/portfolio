@@ -21,6 +21,7 @@ export class NavbarComponent {
       this.isAnimating = true;
       this.menu = !this.menu;
       this.animateBurger();
+      this.changeScroll();
     }
   }
 
@@ -29,6 +30,14 @@ export class NavbarComponent {
       this.openBurger();
     } else {
       this.closeBurger();
+    }
+  }
+
+  changeScroll() {
+    if (this.menu) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
     }
   }
 

@@ -10,4 +10,5 @@ export class AppComponent {
 
   public isArrowVisible: boolean = false;
   public isArrowVisible2: boolean = false;
+  public isArrowVisible3: boolean = false;
 }

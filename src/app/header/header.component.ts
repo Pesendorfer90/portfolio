@@ -8,5 +8,7 @@ import { scrollToElement } from '../functions';
 })
 export class HeaderComponent {
 
-// Hier weiter machen
+  scrollToArea(element: string) {
+    scrollToElement(element);
+  }
 }

@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-// import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { updateVisibility } from './../functions';
 
 @Component({
   selector: 'app-contact',
@@ -9,14 +8,11 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact.component.scss'],
 })
 
-export class ContactComponent {
+export class ContactComponent implements AfterViewInit {
   isHovered: boolean = false;
   nameFocus: boolean = false;
   emailFocus: boolean = false;
   messageFocus: boolean = false;
-
-
-
 
 
   contactData = {
@@ -26,59 +22,24 @@ export class ContactComponent {
     privatPolicy: false,
   }
 
+
+  @ViewChild('arrowTrigger3') arrowTrigger!: ElementRef;
+  @Output() visible3 = new EventEmitter<boolean>();
+  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:resize', ['$event'])
+
+  ngAfterViewInit() {
+    updateVisibility(this.arrowTrigger, this.visible3);
+  }
+
+
+  onWindowChange() {
+    updateVisibility(this.arrowTrigger, this.visible3);
+  }
+
+
   onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
-      
+    if (ngForm.valid && ngForm.submitted) {  
     }
   }
-
-
-
-
-
-
-
-  // meinFormular: FormGroup;
-  // name: FormControl;
-  // email: FormControl;
-  // message: FormControl;
-  // checkBox: FormControl;
-
-  // constructor() {
-  //   this.name = new FormControl('', [Validators.required, Validators.minLength(5)]);
-  //   this.email = new FormControl('', [Validators.required, Validators.email]);
-  //   this.message = new FormControl('', [Validators.required, Validators.minLength(10)]);
-  //   this.checkBox = new FormControl('', Validators.required);
-
-  //   this.meinFormular = new FormGroup({
-  //     name: this.name,
-  //     email: this.email,
-  //     message: this.message,
-  //     checkBox: this.checkBox
-  //   });
-  //   console.log(this.meinFormular.value);
-  // }
-
-  // logFormValue() {
-  //   console.log(this.meinFormular.value);
-  // }
-
-  logFormValue() {
-    console.log(this.contactData);
-  }
-
-  onCheckboxChange() {
-    if (this.contactData.privatPolicy) {
-      // this.meinFormular.get('checkBox').setValue('');
-      // console.log(this.meinFormular.get('checkBox').value);
-    }    
-  }
-
-  // onCheckboxChange() {
-  //   if (!this.meinFormular.get('checkBox').value) {
-  //     this.meinFormular.get('checkBox').setValue('');
-  //     console.log(this.meinFormular.get('checkBox').value);
-  //   }    
-  // }
 }

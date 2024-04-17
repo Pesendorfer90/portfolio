@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { scrollToElement } from '../functions';
 
 @Component({
   selector: 'app-about-me',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AboutMeComponent {
 
+  scrollToArea(element: string) {
+    scrollToElement(element);
+  }
 }
