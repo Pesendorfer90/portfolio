@@ -29,12 +29,14 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/fonts/overpass.css",
-              "src/assets/fonts/syne.css"
+              "src/assets/fonts/syne.css",
+              "src/assets/fonts/poppins.css"
             ],
             "styles": [
               "src/styles.scss",
               "src/assets/fonts/overpass.css",
-              "src/assets/fonts/syne.css"
+              "src/assets/fonts/syne.css",
+              "src/assets/fonts/poppins.css"
             ],
             "scripts": []
           },

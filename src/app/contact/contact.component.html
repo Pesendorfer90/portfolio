@@ -83,89 +83,12 @@
                     <div class="button-container">
                         <button [ngClass]="{'active': name.valid &&email.valid && message.valid && privatePolicy.valid}" type="submit">Send Message</button>
                     </div>
+
+                    <div class="arrow-up-container">
+                        <div class="arrow-up">HIER PFEIL MACHEN</div>
+                    </div>
+
                 </form>
-
-
-
-
-
-
-                <!-- <form [formGroup]="meinFormular">
-                    <div class="befor-container" [ngClass]="{'input-focus input-name': nameFocus}">
-                        <input #name formControlName="name" class="name" type="text" placeholder="Your name"
-                            (focus)='nameFocus = true' (focusout)='nameFocus = false'>
-                        <div class="status-img-container">
-                            <img *ngIf="meinFormular.get('name').invalid && (meinFormular.get('name').dirty || meinFormular.get('name').touched)"
-                                src="./../../assets/img/contact/error.png">
-                            <img *ngIf="meinFormular.get('name').valid" src="./../../assets/img/contact/ok.png">
-                        </div>
-                    </div>
-
-                    <div class="error-message-container" [ngClass]="{'error-active': meinFormular.get('name').invalid &&
-                        (meinFormular.get('name').dirty || meinFormular.get('name').touched)}">
-                        <div class="error-message-active" *ngIf="meinFormular.get('name').invalid &&
-                        (meinFormular.get('name').dirty || meinFormular.get('name').touched)">
-                            Your name is required
-                        </div>
-                    </div>
-
-                    <div class="befor-container" [ngClass]="{'input-focus input-email': emailFocus}">
-                        <input #email formControlName="email" class="email" type="email" placeholder="Your email"
-                            (focus)='emailFocus = true' (focusout)='emailFocus = false'>
-                        <div class="status-img-container">
-                            <img *ngIf="meinFormular.get('email').invalid && (meinFormular.get('email').dirty || meinFormular.get('email').touched)"
-                                src="./../../assets/img/contact/error.png">
-                            <img *ngIf="meinFormular.get('email').valid" src="./../../assets/img/contact/ok.png">
-                        </div>
-                    </div>
-
-                    <div class="error-message-container" [ngClass]="{'error-active': meinFormular.get('email').invalid &&
-                        (meinFormular.get('email').dirty || meinFormular.get('email').touched)}">
-                        <div class="error-message-active" *ngIf="meinFormular.get('email').invalid &&
-                        (meinFormular.get('email').dirty || meinFormular.get('email').touched)">
-                            Your email is required
-                        </div>
-                    </div>
-
-                    <div class="befor-container" [ngClass]="{'input-focus input-message': messageFocus}">
-                        <div class="pull-tab"></div>
-                        <textarea #message formControlName="message" class="message" type="text"
-                            placeholder="Your message" (focus)='messageFocus = true'
-                            (focusout)='messageFocus = false'></textarea>
-                        <div class="status-img-container">
-                            <img *ngIf="meinFormular.get('message').invalid && (meinFormular.get('message').dirty || meinFormular.get('message').touched)"
-                                src="./../../assets/img/contact/error.png">
-                            <img *ngIf="meinFormular.get('message').valid" src="./../../assets/img/contact/ok.png">
-                        </div>
-                    </div>
-
-                    <div class="error-message-container" [ngClass]="{'error-active': meinFormular.get('message').invalid &&
-                            (meinFormular.get('message').dirty || meinFormular.get('message').touched)}">
-                        <div class="error-message-active" *ngIf="meinFormular.get('message').invalid &&
-                            (meinFormular.get('message').dirty || meinFormular.get('message').touched)">
-                            Your message is empty
-                        </div>
-                    </div>
-
-                    <div class="privacy-policy-box">
-                        <div class="agree-hover" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
-                            <label class="agree-box">
-                                <input type="checkbox" (change)="onCheckboxChange()" formControlName="checkBox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <p>I've read the</p>
-                        <div class="privacy-policy-link"><a [ngClass]="{'hovered': isHovered}" href="#">privacy
-                                policy</a>
-                        </div>
-                        <p> and agree to the processing of my data as outlined.</p>
-                    </div>
-                    <div class="button-container">
-                        <button (click)="logFormValue()" [ngClass]="{'active': meinFormular.valid}"
-                            [disabled]="!meinFormular.valid">Send Message</button>
-                    </div>
-                </form> -->
-                <!-- <button (click)="logFormValue()" [ngClass]="{'active': meinFormular.valid}" [disabled]="!meinFormular.valid">Send Message</button> -->
             </div>
         </div>
     </div>
