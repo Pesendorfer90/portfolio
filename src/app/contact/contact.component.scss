@@ -264,10 +264,40 @@
                     right: 0px;
                     bottom: 0px;
 
-                    div {
-                        background-color: #00BC8F;
-                        height: 70px;
-                        width: 70px;
+                    .arrow-up {
+                        position: relative;
+                        width: 215px;
+                        height: 80px;
+                        display: flex;
+                        align-items: flex-end;
+
+                        .line {
+                            background-color: rgb(255, 255, 255);
+                            position: absolute;
+                        }
+                
+                        .line:nth-child(1) {
+                            width: 52px;
+                            height: 4px;
+                            top: 52px;
+                            transform: rotate(90deg);
+                        }
+                
+                        .line:nth-child(2) {
+                            width: 30px;
+                            height: 4px;
+                            top: 35px;
+                            left: 21px;
+                            transform: rotate(45deg);
+                        }
+                
+                        .line:nth-child(3) {
+                            width: 30px;
+                            height: 4px;
+                            top: 35px;
+                            left: 1px;
+                            transform: rotate(-45deg);
+                        }
                     }
                 }
             }
