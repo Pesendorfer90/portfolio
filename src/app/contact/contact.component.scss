@@ -261,12 +261,12 @@
 
                 .arrow-up-container {
                     position: absolute;
-                    right: 0px;
+                    right: -4px;
                     bottom: 0px;
 
                     .arrow-up {
                         position: relative;
-                        width: 215px;
+                        width: 48px;
                         height: 80px;
                         display: flex;
                         align-items: flex-end;
@@ -279,25 +279,34 @@
                         .line:nth-child(1) {
                             width: 52px;
                             height: 4px;
-                            top: 52px;
+                            right: -2.7px;
+                            bottom: 26px;
                             transform: rotate(90deg);
                         }
                 
                         .line:nth-child(2) {
                             width: 30px;
                             height: 4px;
-                            top: 35px;
-                            left: 21px;
-                            transform: rotate(45deg);
+                            bottom: 44px;
+                            right: -2px;
+                            transform: rotate(40deg);
                         }
                 
                         .line:nth-child(3) {
                             width: 30px;
                             height: 4px;
-                            top: 35px;
-                            left: 1px;
-                            transform: rotate(-45deg);
+                            bottom: 44px;
+                            right: 19px;
+                            transform: rotate(-40deg);
                         }
+                    }
+
+                    .hover-up {
+                        animation: hover-link-active 0.2s ease-in-out forwards;
+                    }
+
+                    .reset-down {
+                        animation: hover-link-inaktiv 0.2s ease-in-out forwards;
                     }
                 }
             }
@@ -366,5 +375,25 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes hover-down-inaktiv {
+    0% {
+
+    }
+
+    100% {
+
+    }
+}
+
+@keyframes hover-up-active {
+    0% {
+
+    }
+
+    100% {
+
     }
 }

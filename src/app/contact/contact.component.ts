@@ -22,6 +22,8 @@ export class ContactComponent implements AfterViewInit {
     privatPolicy: false,
   }
 
+  linkAnimationStates: { [key: string]: { enter: boolean, leave: boolean } } = {};
+
 
   @ViewChild('arrowTrigger3') arrowTrigger!: ElementRef;
   @Output() visible3 = new EventEmitter<boolean>();
@@ -39,7 +41,15 @@ export class ContactComponent implements AfterViewInit {
 
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && ngForm.submitted) {  
+    if (ngForm.valid && ngForm.submitted) {
     }
+  }
+
+  onMouseEnter() {
+    this.linkAnimationStates['arrowUp'] = { enter: true, leave: false };
+  }
+
+  onMouseOut() {
+    this.linkAnimationStates['arrowUp'] = { enter: false, leave: true };
   }
 }
