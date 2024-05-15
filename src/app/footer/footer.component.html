@@ -11,7 +11,7 @@
                         (mouseleave)="onMouseOut('link1')"
                         [ngClass]="{'hover-link': linkAnimationStates['link1']?.enter, 'reset-link': linkAnimationStates['link1']?.leave}">
                 </a>
-                <a class="link2" (click)="scrollToArea('contactSection')" target="_blank">
+                <a class="link2" (click)="scrollToArea('contactSection')">
                     <img src="./assets/img/email.png" id="link2" (mouseenter)="onMouseEnter('link2')"
                         (mouseleave)="onMouseOut('link2')"
                         [ngClass]="{'hover-link': linkAnimationStates['link2']?.enter, 'reset-link': linkAnimationStates['link2']?.leave}">

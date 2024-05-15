@@ -114,18 +114,6 @@
     animation: hover-link-inaktiv 0.2s ease-in-out forwards;
 }
 
-@keyframes hover-link-inaktiv {
-    0% {
-        padding-bottom: 10px;
-        padding-top: 0px;
-    }
-
-    100% {
-        padding-bottom: 0px;
-        padding-top: 10px;
-    }
-}
-
 @keyframes hover-link-active {
     0% {
         padding-bottom: 0px;
@@ -135,6 +123,18 @@
     100% {
         padding-bottom: 10px;
         padding-top: 0px;
+    }
+}
+
+@keyframes hover-link-inaktiv {
+    0% {
+        padding-bottom: 10px;
+        padding-top: 0px;
+    }
+
+    100% {
+        padding-bottom: 0px;
+        padding-top: 10px;
     }
 }
 

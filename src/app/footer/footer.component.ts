@@ -17,7 +17,6 @@ export class FooterComponent {
     this.linkAnimationStates[linkId] = { enter: false, leave: true };
   }
 
-
   scrollToArea(link: string) {
     scrollToElement(link);
   }

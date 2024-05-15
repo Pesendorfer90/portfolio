@@ -7,9 +7,10 @@ import { scrollToElement } from '../functions';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  public menu: boolean = false;
-  public burgerIndex: number = 1;
-  public isAnimating: boolean = false;
+  menu: boolean = false;
+  burgerIndex: number = 1;
+  isAnimating: boolean = false;
+  linkAnimationStates: { [key: string]: { enter: boolean, leave: boolean } } = {};
 
   scrollToArea(link: string) {
     this.navMenu();
@@ -51,5 +52,13 @@ export class NavbarComponent {
     const interval = setInterval(() => {
       this.burgerIndex > 1 ? this.burgerIndex-- : (clearInterval(interval), this.isAnimating = false);
     }, 56);
+  }
+
+  onMouseEnter(linkId: string) {
+    this.linkAnimationStates[linkId] = { enter: true, leave: false };
+  }
+
+  onMouseOut(linkId: string) {
+    this.linkAnimationStates[linkId] = { enter: false, leave: true };
   }
 }

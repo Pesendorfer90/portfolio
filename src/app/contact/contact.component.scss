@@ -14,6 +14,7 @@
             width: 90%;
             display: flex;
             justify-content: flex-start;
+            padding-bottom: 50px;
 
             p {
                 font-size: 78px;
@@ -270,20 +271,20 @@
                         height: 80px;
                         display: flex;
                         align-items: flex-end;
+                        cursor: pointer;
 
                         .line {
                             background-color: rgb(255, 255, 255);
                             position: absolute;
                         }
-                
+
                         .line:nth-child(1) {
-                            width: 52px;
-                            height: 4px;
-                            right: -2.7px;
-                            bottom: 26px;
-                            transform: rotate(90deg);
+                            width: 4px;
+                            height: 52px;
+                            right: 21px;
+                            bottom: 0px;
                         }
-                
+
                         .line:nth-child(2) {
                             width: 30px;
                             height: 4px;
@@ -291,22 +292,30 @@
                             right: -2px;
                             transform: rotate(40deg);
                         }
-                
+
                         .line:nth-child(3) {
                             width: 30px;
                             height: 4px;
                             bottom: 44px;
                             right: 19px;
-                            transform: rotate(-40deg);
+                            transform: rotate(140deg);
                         }
                     }
 
-                    .hover-up {
-                        animation: hover-link-active 0.2s ease-in-out forwards;
+                    .hover-up-line {
+                        animation: hover-up-active 0.2s ease-in-out forwards;
                     }
 
-                    .reset-down {
-                        animation: hover-link-inaktiv 0.2s ease-in-out forwards;
+                    .reset-down-line {
+                        animation: hover-down-inaktiv 0.2s ease-in-out forwards;
+                    }
+
+                    .hover-up-line-vertival {
+                        animation: hover-vertival-active 0.2s ease-in-out forwards;
+                    }
+
+                    .reset-down-line-vertival {
+                        animation: hover-vertival-inaktiv 0.2s ease-in-out forwards;
                     }
                 }
             }
@@ -378,22 +387,42 @@
     }
 }
 
-@keyframes hover-down-inaktiv {
+@keyframes hover-up-active {
     0% {
-
+        height: 52px;
     }
 
     100% {
-
+        height: 82px;
     }
 }
 
-@keyframes hover-up-active {
+@keyframes hover-down-inaktiv {
     0% {
-
+        height: 82px;
     }
 
     100% {
+        height: 52px;
+    }
+}
 
+@keyframes hover-vertival-active {
+    0% {
+        bottom: 44px;
+    }
+
+    100% {
+        bottom: 74px;
+    }
+}
+
+@keyframes hover-vertival-inaktiv {
+    0% {
+        bottom: 74px;
+    }
+
+    100% {
+        bottom: 44px;
     }
 }

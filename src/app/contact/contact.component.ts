@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { updateVisibility } from './../functions';
+import { scrollToElement } from '../functions';
+// import { getLocaleMonthNames } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
@@ -46,10 +48,16 @@ export class ContactComponent implements AfterViewInit {
   }
 
   onMouseEnter() {
+    console.log('1');
     this.linkAnimationStates['arrowUp'] = { enter: true, leave: false };
   }
 
   onMouseOut() {
+    console.log('2');
     this.linkAnimationStates['arrowUp'] = { enter: false, leave: true };
+  }
+
+  scrollToArea(link: string) {
+    scrollToElement(link);
   }
 }

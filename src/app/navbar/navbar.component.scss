@@ -155,8 +155,8 @@
                 font-size: 23px;
                 font-family: Overpass;
             }
-
-            .footer-right {
+            
+            .links {
                 width: 200px;
                 display: flex;
                 justify-content: space-between;
@@ -164,15 +164,11 @@
 
                 a {
                     cursor: pointer;
-                    padding-bottom: 0;
-                    animation: hover-link-inaktiv 0.2s ease-in-out reverse;
 
                     img {
                         height: 40px;
-                    }
-
-                    &:hover {
-                        animation: hover-link-active 0.2s ease-in-out forwards;
+                        padding-bottom: 0;
+                        padding-top: 10px;
                     }
                 }
             }
@@ -183,23 +179,55 @@
 @keyframes hover-link-inaktiv {
     0% {
         padding-bottom: 10px;
-      }
-    
-      100% {
+    }
+
+    100% {
         padding-bottom: 0px;
-      }
+    }
 }
 
 @keyframes hover-link-active {
     0% {
         padding-bottom: 0px;
-      }
-    
-      100% {
+    }
+
+    100% {
         padding-bottom: 10px;
-      }
+    }
 }
 
 .hide-menu {
     transform: translateY(0px) !important;
+}
+
+.hover-link {
+    animation: hover-link-active 0.2s ease-in-out forwards;
+}
+
+.reset-link {
+    animation: hover-link-inaktiv 0.2s ease-in-out forwards;
+}
+
+@keyframes hover-link-active {
+    0% {
+        padding-bottom: 0px;
+        padding-top: 10px;
+    }
+
+    100% {
+        padding-bottom: 10px;
+        padding-top: 0px;
+    }
+}
+
+@keyframes hover-link-inaktiv {
+    0% {
+        padding-bottom: 10px;
+        padding-top: 0px;
+    }
+
+    100% {
+        padding-bottom: 0px;
+        padding-top: 10px;
+    }
 }

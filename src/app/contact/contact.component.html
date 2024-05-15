@@ -86,11 +86,10 @@
 
                     <div class="arrow-up-container">
                         <div class="arrow-up" (mouseenter)="onMouseEnter()"
-                        (mouseleave)="onMouseOut()"
-                        [ngClass]="{'hover-up': linkAnimationStates['arrowUp']?.enter, 'reset-down': linkAnimationStates['arrowUp']?.leave}">
-                            <div class="line"></div>
-                            <div class="line"></div>
-                            <div class="line"></div>
+                        (mouseleave)="onMouseOut()" (click)="scrollToArea('headerUp')">
+                            <div class="line" [ngClass]="{'hover-up-line': linkAnimationStates['arrowUp']?.enter, 'reset-down-line': linkAnimationStates['arrowUp']?.leave}"></div>
+                            <div class="line" [ngClass]="{'hover-up-line-vertival': linkAnimationStates['arrowUp']?.enter, 'reset-down-line-vertival': linkAnimationStates['arrowUp']?.leave}"></div>
+                            <div class="line" [ngClass]="{'hover-up-line-vertival': linkAnimationStates['arrowUp']?.enter, 'reset-down-line-vertival': linkAnimationStates['arrowUp']?.leave}"></div>
                         </div>
                     </div>
 
