@@ -1,19 +1,24 @@
 main {
     width: 90%;
-    height: 100vh;
+    height: calc( 100vh - 92px);
+    // height: 100vh;
+    margin-top: 92px;
     display: flex;
     align-items: center;
     flex-direction: column;
 
     header {
         height: 50%;
-        min-height: 366px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
         h1 {
             font-family: 'syne';
             font-weight: 800;
             font-size: 128px;
-            margin-bottom: 0;
+            margin: 0;
             display: flex;
             text-align: center;
         }
@@ -21,6 +26,7 @@ main {
         .name-container {
             display: flex;
             justify-content: center;
+            align-items: center;
             font-family: 'overpass';
             font-weight: 700;
             font-size: 48px;
@@ -30,21 +36,21 @@ main {
                 text-align: center;
                 margin: 0;
                 color: #00BC8F;
-                ;
             }
 
             .border {
-                margin-top: 24px;
                 border-top: 3px solid black;
                 width: 450px;
             }
         }
     }
 
+
+
     .basic-information {
         height: 50%;
         width: 100%;
-        min-height: 480px;
+        // min-height: 480px;
         font-size: 23px;
         font-family: 'overpass';
         display: flex;
@@ -88,6 +94,38 @@ main {
             }
 
 
+        }
+    }
+}
+
+@media (max-width: 1240px) {
+
+    main {    
+        header {    
+            h1 {
+                font-size: 10.3vw;
+            }
+    
+            .name-container {
+                font-size: 3.85vw;
+    
+                .border {
+                    width: 36.3vw;
+                }
+            }
+        }
+    
+        .basic-information {
+            font-size: 23px;
+    
+            .email {
+                padding-top: 4.55%;
+            }
+    
+            .info-right {
+                padding-right: 5%;
+                padding-bottom: 2%;
+            }
         }
     }
 }
