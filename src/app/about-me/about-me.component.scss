@@ -68,6 +68,7 @@
 
     .about-img {
         position: relative;
+        margin-right: 20px;
 
         &::before {
             content: attr(href);
@@ -96,7 +97,7 @@
 
     .introduction-container {
         h2 {
-            font-size: 5.8vw;
+            font-size: 5.78vw;
         }
 
         .introduction-info {
@@ -137,18 +138,9 @@
         }
 
         .about-img {
-            position: relative;
-
             &::before {
-                content: attr(href);
-                position: absolute;
-                border: 4px solid black;
-                top: 20px;
-                left: 20px;
-                width: 526px;
-                height: 526px;
-                opacity: 0.0;
-                transition: opacity 0.19s ease-in-out;
+                width: 100%;
+                height: 100%;
             }
 
             img {

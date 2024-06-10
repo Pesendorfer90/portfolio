@@ -5,15 +5,18 @@
   </div>
 
   <div class="portfolio-list">
-    <div *ngFor="let item of items; let i = index" [class.projects]="i % 2 === 0"
-      [class.projects-reverse]="i % 2 === 1">
+    <div *ngFor="let item of items; let i = index" [class.project]="i % 2 === 0"
+      [class.project-reverse]="i % 2 === 1">
       <div class="image">
-        <img src="{{ item.image }}" alt="Bild {{ i + 1 }}">
-        <img class="pointer" src=".\assets\img\portfolio-img\pointer.png" alt="">
+        <img class="preview-img" src="{{ item.image }}" alt="Bild {{ i + 1 }}">
+        <img [class.pointer]="i % 2 === 0" [class.pointer-reverse]="i % 2 === 1"
+        src=".\assets\img\portfolio-img\pointer.png" alt="">
       </div>
       <div class="text">
-        <div class="count">0{{ i + 1 }}/0{{ items.length }}</div>
-        <div class="description">
+        <div [class.count]="i % 2 === 0" [class.count-reverse]="i % 2 === 1">
+          0{{ i + 1 }}/0{{ items.length }}
+        </div>
+        <div [class.description]="i % 2 === 0" [class.description-reverse]="i % 2 === 1">
           <h3>{{ item.name }}</h3>
           <span>{{ item.techStack }}</span>
           <p>{{ item.description }}</p>
