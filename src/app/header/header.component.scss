@@ -1,130 +1,147 @@
 main {
     width: 90%;
-    height: calc( 100vh - 92px);
-    // height: 100vh;
+    height: calc(100vh - 92px);
     margin-top: 92px;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
 
-    header {
-        height: 50%;
+header {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        font-family: 'syne';
+        font-weight: 800;
+        font-size: 128px;
+        margin: 0;
+        display: flex;
+        text-align: center;
+    }
+
+    .name-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-
-        h1 {
-            font-family: 'syne';
-            font-weight: 800;
-            font-size: 128px;
-            margin: 0;
-            display: flex;
-            text-align: center;
-        }
-
-        .name-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'overpass';
-            font-weight: 700;
-            font-size: 48px;
-            gap: 12px;
-
-            p {
-                text-align: center;
-                margin: 0;
-                color: #00BC8F;
-            }
-
-            .border {
-                border-top: 3px solid black;
-                width: 450px;
-            }
-        }
-    }
-
-
-
-    .basic-information {
-        height: 50%;
-        width: 100%;
-        // min-height: 480px;
-        font-size: 23px;
         font-family: 'overpass';
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        font-weight: 700;
+        font-size: 48px;
+        gap: 12px;
 
-        .email {
-            cursor: pointer;
-            writing-mode: vertical-lr;
-            transform: rotate(180deg);
-            padding-top: 4.55%;
+        p {
+            text-align: center;
             margin: 0;
+            color: #00BC8F;
         }
 
-        .info-right {
-            padding-right: 5%;
-            padding-bottom: 2%;
-            cursor: pointer;
-
-            .animation-container {
-                height: 186px;
-                overflow: hidden;
-                position: relative;
-
-                img {
-
-                    position: absolute;
-                    top: -100px;
-                    animation: fall 2s linear infinite;
-
-                    @keyframes fall {
-                        0% {
-                            top: -100px;
-                        }
-
-                        100% {
-                            top: 800px;
-                        }
-                    }
-                }
-            }
-
-
+        .border {
+            border-top: 3px solid black;
+            width: 450px;
         }
     }
 }
 
-@media (max-width: 1240px) {
+.basic-information {
+    height: 50%;
+    width: 100%;
+    // min-height: 480px;
+    font-size: 23px;
+    font-family: 'overpass';
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
-    main {    
-        header {    
+    .email {
+        cursor: pointer;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        padding-top: 4.55%;
+        margin: 0;
+    }
+
+    .info-right {
+        padding-right: 5%;
+        padding-bottom: 2%;
+        cursor: pointer;
+
+        .animation-container {
+            height: 186px;
+            overflow: hidden;
+            position: relative;
+
+            img {
+
+                position: absolute;
+                top: -100px;
+                animation: fall 2s linear infinite;
+
+                @keyframes fall {
+                    0% {
+                        top: -100px;
+                    }
+
+                    100% {
+                        top: 800px;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+@media (max-width: 1240px) and (min-height: 770px) {
+
+    main {
+        header {
             h1 {
                 font-size: 10.3vw;
             }
-    
+
             .name-container {
                 font-size: 3.85vw;
-    
+
                 .border {
                     width: 36.3vw;
                 }
             }
         }
-    
+
         .basic-information {
             font-size: 23px;
-    
+
             .email {
                 padding-top: 4.55%;
             }
-    
+
             .info-right {
                 padding-right: 5%;
                 padding-bottom: 2%;
+            }
+        }
+    }
+}
+
+
+@media (max-height: 770px) and (min-width: 1024px) {
+    header {
+    
+        h1 {
+            font-size: 13.7vh;
+        }
+    
+        .name-container {
+            font-size: 5.71vh;
+            gap: 1.42vh;
+    
+            .border {
+                border-top: 0.357vh solid black;
+                width: 53.57vh;
             }
         }
     }
