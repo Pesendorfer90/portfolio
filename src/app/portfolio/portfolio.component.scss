@@ -355,4 +355,30 @@
   }
 }
 
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+
+  h2 {
+    font-size: 78px;
+    margin: 20px 0 35px 0;
+    animation: pulse 3s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0% {
+      color: black;
+    }
+    20% {
+      color: #00BC8F;
+    }
+    80% {
+      color: #00BC8F;
+    }
+    100% {
+      color: black;
+    }
+  }
+
+  p {
+    font-size: 23px;
+  }
+}
