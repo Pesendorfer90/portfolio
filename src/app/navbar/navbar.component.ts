@@ -10,7 +10,12 @@ export class NavbarComponent {
   menu: boolean = false;
   burgerIndex: number = 1;
   isAnimating: boolean = false;
-  linkAnimationStates: { [key: string]: { enter: boolean, leave: boolean } } = {};
+  linkId: string[]  = ['aboutMeLink', 'mySkillsLink', 'portfolioLink'];
+  linkAnimationStates: { [key: string]: { enter: boolean, leave: boolean, down: boolean } } = {};
+
+  constructor() {
+    (window as any).myComponentInstance = this;
+  }
 
   scrollToArea(link: string) {
     this.navMenu();
@@ -19,8 +24,7 @@ export class NavbarComponent {
 
   navMenu() {
     if (!this.isAnimating) {
-      this.isAnimating = true;
-      this.menu = !this.menu;
+      this.setVariables();
       this.animateBurger();
       this.changeScroll();
     }
@@ -42,6 +46,12 @@ export class NavbarComponent {
     }
   }
 
+  setVariables() {
+    this.linkId.forEach(linkId => this.onMouseOut(linkId));
+    this.isAnimating = true;
+    this.menu = !this.menu;
+  }
+
   openBurger() {
     const interval = setInterval(() => {
       this.burgerIndex < 5 ? this.burgerIndex++ : (clearInterval(interval), this.isAnimating = false);
@@ -55,10 +65,14 @@ export class NavbarComponent {
   }
 
   onMouseEnter(linkId: string) {
-    this.linkAnimationStates[linkId] = { enter: true, leave: false };
+    this.linkAnimationStates[linkId] = { enter: true, leave: false, down: false };
   }
 
   onMouseOut(linkId: string) {
-    this.linkAnimationStates[linkId] = { enter: false, leave: true };
+    this.linkAnimationStates[linkId] = { enter: false, leave: true, down: false };
+  }
+
+  onMouseDown(linkId: string) {
+    this.linkAnimationStates[linkId] = { enter: false, leave: false, down: true };
   }
 }

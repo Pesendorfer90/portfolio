@@ -23,6 +23,6 @@ export function isElementVisible(arrowTrigger: any): boolean {
     return isVisible;
 }
 
-export function   updateVisibility(arrowTrigger: any, visible: any) {
+export function updateVisibility(arrowTrigger: any, visible: any) {
   visible.emit(isElementVisible(arrowTrigger));
 }
