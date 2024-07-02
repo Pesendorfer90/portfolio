@@ -134,10 +134,10 @@ nav {
     }
 }
 
-#aboutMeLink,
-#mySkillsLink {
-    margin-bottom: 30px;
-}
+// #aboutMeLink,
+// #mySkillsLink {
+//     margin-bottom: 30px;
+// }
 
 .menu-footer {
     width: 100vw;
@@ -230,152 +230,40 @@ nav {
     }
 }
 
-
-@media (max-height: 962px) and (min-width: 1025px) {
-
-    .nav-container {
-        height: 9.563vh;
-
-        .top-bar {
-            img {
-                height: 3.12vh;
-            }
-
-            button {
-                img {
-                    height: 3.33vh;
-                }
-            }
-        }
-    }
-
-    .menu-container {
-        top: 9.563vh !important;
-        height: calc(100vh - 9.563vh) !important;
-    }
-
-    .border-base {
-        height: 17.67vh;
-        width: 60.29vh;
-
-        &::before {
-            border-bottom: 0.42vh solid black;
-            border-left: 0.42vh solid black;
-            width: 4.05vh;
-            height: 5.41vh;
-        }
-
-        a {
-            font-size: 9.98vh;
-        }
-    }
-
-    .border-active {
-        @extend .border-base;
-
-        &::before {
-            height: 17.67vh;
-            width: 60.29vh;
-            border: 0.42vh solid black;
-        }
-    }
-
-    @keyframes border-animation {
-        35% {
-            height: 0px;
-            width: 4.06vh;
-            left: 0px;
-        }
-
-        45% {
-            width: 60.29vh;
-        }
-
-        70% {
-            height: 0px;
-            width: 60.29vh;
-            left: 0px;
-
-        }
-
-        100% {
-            height: 0px;
-            width: 25.99vh;
-            left: 36.39vh;
-        }
-    }
-
-    #aboutMeLink,
-    #mySkillsLink {
-        margin-bottom: 3.12vh;
-    }
-
+@media (min-width: 1660px) {
     .menu-footer-content {
-        height: 25.99vh !important;
-        padding: 0% 5% 5.198vh !important;
-
-        p {
-            font-size: 8.11vh !important;
-        }
-
-        a {
-            font-size: 2.4vh !important;
-        }
-
-        .links {
-            width: 20.8vh !important;
-
-            a {
-                img {
-                    height: 4.16vh !important;
-                    padding-top: 1.04vh !important;
-                }
-            }
-        }
-    }
-
-    @keyframes hover-link-active {
-        0% {
-            padding-bottom: 0px !important;
-            padding-top: 1.04vh !important;
-        }
-
-        100% {
-            padding-bottom: 1.04vh !important;
-            padding-top: 0px !important;
-        }
-    }
-
-    @keyframes hover-link-inaktiv {
-        0% {
-            padding-bottom: 1.04vh !important;
-            padding-top: 0px !important;
-        }
-
-        100% {
-            padding-bottom: 0px !important;
-            padding-top: 1.04vh !important;
-        }
+        clip-path: polygon(0 0, 100% 61%, 100% 100%, 0% 100%) !important;
     }
 }
 
-@media (max-height: 760px) and (min-width: 1025px) {
+// @media (max-height: 962px) and (min-width: 1025px) {
+//     // $boarder-container-height: var(--boarder-container-height);
+//     // $boarder-container-height: calc( 170px / (64vh / 100 ));
+//     // $boarder-container-width: calc( 580px / (64vh / 100 ));
+//     $font-sice-nav: var(--boarder-container-height);
 
+//     .border {
+//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+//     }
 
-    .menu-footer-content {
-        clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%) !important;
-    }
-}
+//     .border-hover {
+//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+//     }
 
-@media (max-width: 1024px) {//and (min-aspect-ratio: 9/16) 
+//     .border-active {
+//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+//     }
+
+//     #aboutMeLink,
+//     #mySkillsLink {
+//         margin-bottom: 10px;
+//     }
+// }
+
+@media (max-width: 1024px) {
     $boarder-container-height: 80px;
     $boarder-container-width: 280px;
     $font-sice-nav: 45px;
-
-    nav {
-        background-color: #1cf000 !important;
-        justify-content: center;
-    }
 
     .border {
         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
@@ -391,11 +279,8 @@ nav {
 
     #aboutMeLink,
     #mySkillsLink {
-        margin-bottom: 10%;
+        margin-bottom: 10px;
     }
-
-
-
 
     .menu-footer-content {
         flex-direction: column;
@@ -432,7 +317,7 @@ nav {
 
             a {
                 font-size: 23px;
-                font-weight: 300 !important;
+                font-weight: 300;
             }
         }
 
@@ -441,14 +326,3 @@ nav {
         }
     }
 }
-
-
-
-
-
-
-// @media (max-width: 1024px) and (max-aspect-ratio: 9/16) {
-//     nav {
-//         background-color: #b60000 !important;
-//     }
-// }
