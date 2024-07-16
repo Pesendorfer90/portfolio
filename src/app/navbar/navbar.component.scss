@@ -135,11 +135,6 @@ nav {
     }
 }
 
-// #aboutMeLink,
-// #mySkillsLink {
-//     margin-bottom: 30px;
-// }
-
 .menu-footer {
     width: 100vw;
     background-color: #FFFCF3;
@@ -231,40 +226,18 @@ nav {
     }
 }
 
+
 @media (min-width: 1660px) {
     .menu-footer-content {
         clip-path: polygon(0 0, 100% 61%, 100% 100%, 0% 100%) !important;
     }
 }
 
-// @media (max-height: 962px) and (min-width: 1025px) {
-//     // $boarder-container-height: var(--boarder-container-height);
-//     // $boarder-container-height: calc( 170px / (64vh / 100 ));
-//     // $boarder-container-width: calc( 580px / (64vh / 100 ));
-//     $font-sice-nav: var(--boarder-container-height);
 
-//     .border {
-//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
-//     }
-
-//     .border-hover {
-//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
-//     }
-
-//     .border-active {
-//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
-//     }
-
-//     #aboutMeLink,
-//     #mySkillsLink {
-//         margin-bottom: 10px;
-//     }
-// }
-
-@media (max-width: 1024px) {
-    $boarder-container-height: 80px;
-    $boarder-container-width: 280px;
-    $font-sice-nav: 45px;
+@media (max-width: 690px), (max-height: 903px) {
+    $boarder-container-height: 97px !important;
+    $boarder-container-width: 330px !important;
+    $font-sice-nav: 55px !important;
 
     .border {
         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
@@ -278,15 +251,10 @@ nav {
         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
     }
 
-    #aboutMeLink,
-    #mySkillsLink {
-        margin-bottom: 10px;
-    }
-
     .menu-footer-content {
         flex-direction: column;
         justify-content: space-between;
-        padding: 0% 5% 50px;
+        height: 180px !important;
 
         div:first-child {
             align-self: flex-start;
@@ -317,13 +285,34 @@ nav {
             }
 
             a {
-                font-size: 23px;
                 font-weight: 300;
             }
         }
+    }
 
-        .links {
-            align-self: flex-end;
-        }
+    .menu-footer-content div a {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 400px), (max-height: 613px) {
+    $boarder-container-height: 76px !important;
+    $boarder-container-width: 261px !important;
+    $font-sice-nav: 43px !important;
+
+    .border {
+        @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+    }
+
+    .border-hover {
+        @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+    }
+
+    .border-active {
+        @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+    }
+
+    .menu-footer-content div a {
+        font-size: 18px !important;
     }
 }

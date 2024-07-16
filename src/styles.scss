@@ -2,4 +2,27 @@ body {
     margin: 0;
     background: #FFFCF3;
     overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+
+        &:hover {
+            width: 12px;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(104, 104, 104, 0.4);
+        border-radius: 2px;
+
+        &:hover {
+            transition: background-color 0.190s ease-in-out;
+            background-color: #00bc9044;
+            border-radius: 4px;
+        }
+    }
 }
