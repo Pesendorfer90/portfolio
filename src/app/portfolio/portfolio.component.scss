@@ -260,98 +260,98 @@
   }
 }
 
+// @media (max-width: 1645px) {
+  // .project-base {
+  //   height: auto;
+
+  //   &:hover {
+
+  //     .pointer,
+  //     .pointer-reverse {
+  //       height: 4.56vw !important;
+  //       width: 4.56vw !important;
+  //     }
+  //   }
+  // }
+
+  // .image-base {
+  //   &::before {
+  //     border: 0.243vw solid black;
+  //     top: 1.21vw
+  //   }
+  // }
+
+  // .image {
+  //   &::before {
+  //     left: 1.21vw
+  //   }
+  // }
+
+  // .image-reverse {
+  //   &::before {
+  //     right: 1.21vw
+  //   }
+  // }
+
+  // .pointer-base {
+  //   height: 2.91vw;
+  //   width: 2.91vw
+  // }
+
+  // .pointer {
+  //   right: -1.58vw;
+  // }
+
+  // .pointer-reverse {
+  //   left: -1.58vw;
+  // }
+
+  // .text {
+  //   padding-left: 9.12vw;
+  // }
+
+  // .text-reverse {
+  //   padding-right: 9.12vw;
+  // }
+
+  // .count-base {
+  //   font-size: 2.91vw;
+  // }
+
+  // .description-base {
+  //   padding-top: 1.82vw;
+
+  //   h3 {
+  //     font-size: 2.73vw;
+  //     margin-top: 2.73vw;
+  //     margin-bottom: 2.73vw;
+  //   }
+
+  //   span {
+  //     font-size: 1.4vw;
+  //   }
+
+  //   p {
+  //     font-size: 0.97vw;
+  //   }
+  // }
+
+  // .github-link {
+  //   width: 11.49vw;
+  //   height: 4.13vw;
+  //   font-size: 1.4vw;
+
+  //   &:hover {
+  //     width: calc(11.49vw * 1.26);
+  //   }
+
+  //   &:active {
+  //     width: calc(11.49vw * 1.26);
+  //   }
+  // }
+// }
+
 @media (max-width: 1645px) {
-  .project-base {
-    height: auto;
-
-    &:hover {
-
-      .pointer,
-      .pointer-reverse {
-        height: 4.56vw !important;
-        width: 4.56vw !important;
-      }
-    }
-  }
-
-  .image-base {
-    &::before {
-      border: 0.243vw solid black;
-      top: 1.21vw
-    }
-  }
-
-  .image {
-    &::before {
-      left: 1.21vw
-    }
-  }
-
-  .image-reverse {
-    &::before {
-      right: 1.21vw
-    }
-  }
-
-  .pointer-base {
-    height: 2.91vw;
-    width: 2.91vw
-  }
-
-  .pointer {
-    right: -1.58vw;
-  }
-
-  .pointer-reverse {
-    left: -1.58vw;
-  }
-
-  .text {
-    padding-left: 9.12vw;
-  }
-
-  .text-reverse {
-    padding-right: 9.12vw;
-  }
-
-  .count-base {
-    font-size: 2.91vw;
-  }
-
-  .description-base {
-    padding-top: 1.82vw;
-
-    h3 {
-      font-size: 2.73vw;
-      margin-top: 2.73vw;
-      margin-bottom: 2.73vw;
-    }
-
-    span {
-      font-size: 1.4vw;
-    }
-
-    p {
-      font-size: 0.97vw;
-    }
-  }
-
-  .github-link {
-    width: 11.49vw;
-    height: 4.13vw;
-    font-size: 1.4vw;
-
-    &:hover {
-      width: calc(11.49vw * 1.26);
-    }
-
-    &:active {
-      width: calc(11.49vw * 1.26);
-    }
-  }
-}
-
-@media (max-width: 1024px) {
 
   .portfolio-header {
 
@@ -384,6 +384,7 @@
     flex-direction: column;
     width: 720px;
     padding: 0;
+    height: auto;
 
     &:hover {
 
@@ -443,7 +444,7 @@
 
   .text-base {
     width: 100%;
-    height: 450px;
+    // height: 450px;
   }
 
   .text {
@@ -528,9 +529,9 @@
     width: 520px;
   }
 
-  .text-base {
-    height: 350px;
-  }
+  // .text-base {
+  //   height: 350px;
+  // }
 }
 
 @media (max-width: 690px) {
@@ -564,9 +565,9 @@
     width: 0px;
   }
 
-  .text-base {
-    height: 350px;
-  }
+  // .text-base {
+  //   height: 350px;
+  // }
 
   .count-base {
     font-size: 23px;
@@ -599,11 +600,11 @@
     margin: 15px 0 15px 0;
 
     &:hover {
-      width: 238px;
+      width: 232px;
     }
 
     &:active {
-      width: 238px;
+      width: 232px;
     }
   }
 }
