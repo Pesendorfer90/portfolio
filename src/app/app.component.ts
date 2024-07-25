@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'portfolio';
 
-  public isArrowVisible: boolean = false;
-  public isArrowVisible2: boolean = false;
-  public isArrowVisible3: boolean = false;
+  // public isArrowVisible: boolean = false;
+  // public isArrowVisible2: boolean = false;
+  // public isArrowVisible3: boolean = false;
 }

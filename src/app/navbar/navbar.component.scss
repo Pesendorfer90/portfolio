@@ -56,7 +56,7 @@ nav {
     flex-grow: 1;
 }
 
-@mixin border-base($boarder-container-height, $boarder-container-width, $font-sice-nav) {
+.border {
     height: $boarder-container-height;
     width: $boarder-container-width;
     display: flex;
@@ -76,6 +76,19 @@ nav {
         height: 30.6%;
     }
 
+    &:hover::before {
+        animation: border-animation 0.2s ease-out;
+        animation-fill-mode: forwards;
+    }
+
+    &:active::before {
+        bottom: 0 !important;
+        left: 0 !important;
+        height: 100% !important;
+        width: 100% !important;
+        border: 4px solid black;
+    }
+
     a {
         font-size: $font-sice-nav;
         font-weight: 700;
@@ -85,30 +98,71 @@ nav {
     }
 }
 
-.border {
-    @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
-}
 
-.border-hover {
-    @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
 
-    &::before {
-        animation: border-animation 0.2s ease-out;
-        animation-fill-mode: forwards;
-    }
-}
 
-.border-active {
-    @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
 
-    &::before {
-        bottom: 0;
-        left: 0;
-        height: 100% !important;
-        width: 100% !important;
-        border: 4px solid black;
-    }
-}
+
+
+
+
+
+
+
+
+// @mixin border-base($boarder-container-height, $boarder-container-width, $font-sice-nav) {
+//     height: $boarder-container-height;
+//     width: $boarder-container-width;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: relative;
+//     cursor: pointer;
+
+//     &::before {
+//         content: attr(href);
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         border-bottom: 4px solid black;
+//         border-left: 4px solid black;
+//         width: 6.7%;
+//         height: 30.6%;
+//     }
+
+//     a {
+//         font-size: $font-sice-nav;
+//         font-weight: 700;
+//         font-family: Syne;
+//         color: #000000;
+//         text-decoration: none;
+//     }
+// }
+
+// .border {
+//     @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+// }
+
+// .border-hover {
+//     @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+
+//     &::before {
+//         animation: border-animation 0.2s ease-out;
+//         animation-fill-mode: forwards;
+//     }
+// }
+
+// .border-active {
+//     @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+
+//     &::before {
+//         bottom: 0;
+//         left: 0;
+//         height: 100% !important;
+//         width: 100% !important;
+//         border: 4px solid black;
+//     }
+// }
 
 @keyframes border-animation {
     35% {
@@ -234,22 +288,32 @@ nav {
 }
 
 
-@media (max-width: 690px), (max-height: 903px) {
+@media (max-width: 690px),
+(max-height: 903px) {
     $boarder-container-height: 97px !important;
     $boarder-container-width: 330px !important;
     $font-sice-nav: 55px !important;
 
     .border {
-        @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+        height: $boarder-container-height;
+        width: $boarder-container-width;
+    
+        a {
+            font-size: $font-sice-nav;
+        }
     }
 
-    .border-hover {
-        @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
-    }
+//     .border {
+//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+//     }
 
-    .border-active {
-        @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
-    }
+//     .border-hover {
+//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+//     }
+
+//     .border-active {
+//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+//     }
 
     .menu-footer-content {
         flex-direction: column;
@@ -295,22 +359,32 @@ nav {
     }
 }
 
-@media (max-width: 400px), (max-height: 613px) {
+@media (max-width: 400px),
+(max-height: 613px) {
     $boarder-container-height: 76px !important;
     $boarder-container-width: 261px !important;
     $font-sice-nav: 43px !important;
 
     .border {
-        @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+        height: $boarder-container-height;
+        width: $boarder-container-width;
+    
+        a {
+            font-size: $font-sice-nav;
+        }
     }
 
-    .border-hover {
-        @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
-    }
+//     .border {
+//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+//     }
 
-    .border-active {
-        @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
-    }
+//     .border-hover {
+//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+//     }
+
+//     .border-active {
+//         @include border-base($boarder-container-height, $boarder-container-width, $font-sice-nav);
+//     }
 
     .menu-footer-content div a {
         font-size: 18px !important;

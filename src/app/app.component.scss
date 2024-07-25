@@ -1,19 +1,10 @@
 app-navbar {
     position: fixed;
     top: 0;
-    // left: 0;
-    // right: 0;
     z-index: 99;
 }
 
-app-header,
-app-about-me,
-app-arrow,
-app-my-skills,
-app-portfolio,
-app-arrow2,
-app-arrow3,
-app-contact,
+legal-notice,
 app-footer {
     display: flex;
     justify-content: center;

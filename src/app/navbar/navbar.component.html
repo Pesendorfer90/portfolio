@@ -9,22 +9,13 @@
 
 <div [class.hide-menu]="menu" class="menu-container">
     <nav #nav>
-        <div id="aboutMeLink" (click)="scrollToArea('aboutMe')" (mouseenter)="onMouseEnter('aboutMeLink')"
-            (mouseleave)="onMouseOut('aboutMeLink')" (mousedown)="onMouseDown('aboutMeLink')"
-            [ngClass]="{'border': linkAnimationStates['aboutMeLink']?.leave, 'border-hover': linkAnimationStates['aboutMeLink']?.enter,
-            'border-active': linkAnimationStates['aboutMeLink']?.down}">
+        <div id="aboutMeLink" class="border" [routerLink]="['/']" fragment="aboutMe" (click)="scrollToArea('aboutMe')">
             <a id="aboutMeLinkText">About me</a>
         </div>
-        <div id="mySkillsLink" (click)="scrollToArea('mySkills')" (mouseenter)="onMouseEnter('mySkillsLink')"
-            (mouseleave)="onMouseOut('mySkillsLink')" (mousedown)="onMouseDown('mySkillsLink')"
-            [ngClass]="{'border': linkAnimationStates['mySkillsLink']?.leave, 'border-hover': linkAnimationStates['mySkillsLink']?.enter,
-            'border-active': linkAnimationStates['mySkillsLink']?.down}">
+        <div id="mySkillsLink" class="border" [routerLink]="['/']" fragment="mySkills" (click)="scrollToArea('mySkills')">
             <a id="mySkillsLinkText">My skills</a>
         </div>
-        <div id="portfolioLink" (click)="scrollToArea('portfolio')" (mouseenter)="onMouseEnter('portfolioLink')"
-            (mouseleave)="onMouseOut('portfolioLink')" (mousedown)="onMouseDown('portfolioLink')"
-            [ngClass]="{'border': linkAnimationStates['portfolioLink']?.leave, 'border-hover': linkAnimationStates['portfolioLink']?.enter,
-            'border-active': linkAnimationStates['portfolioLink']?.down}">
+        <div id="portfolioLink" class="border" [routerLink]="['/']" fragment="portfolio" (click)="scrollToArea('portfolio')">
             <a id="portfolioLinkText">Portfolio</a>
         </div>
     </nav>

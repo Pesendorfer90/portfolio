@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { scrollToElement } from '../functions';
+import { CommonModule } from '@angular/common';
+import { RouterLink, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 
-export class NavbarComponent  {
+export class NavbarComponent implements OnInit {
   menu: boolean = false;
   burgerIndex: number = 1;
   isAnimating: boolean = false;
@@ -16,63 +20,70 @@ export class NavbarComponent  {
   linkTextId: string[] = ['aboutMeLinkText', 'mySkillsLinkText', 'portfolioLinkText'];
   containerSize: number[] = [170, 580, 96];
 
+  constructor(private router: Router) { }
 
-scrollToArea(link: string) {
-  this.navMenu();
-  scrollToElement(link);
-}
-
-navMenu() {
-  if (!this.isAnimating) {
-    this.setVariables();
-    this.animateBurger();
-    this.changeScroll();
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const tree = this.router.parseUrl(this.router.url);
+        if (tree.fragment) {
+          scrollToElement(tree.fragment);
+        }
+      }
+    });
   }
-}
 
-animateBurger() {
-  if (this.burgerIndex == 1) {
-    this.openBurger();
-  } else {
-    this.closeBurger();
+  scrollToArea(link: string) {
+    this.navMenu();
+    scrollToElement(link);
   }
-}
 
-changeScroll() {
-  if (this.menu) {
-    document.body.style.overflowY = 'hidden';
-  } else {
-    document.body.style.overflowY = 'auto';
+  navMenu() {
+    if (!this.isAnimating) {
+      this.setVariables();
+      this.animateBurger();
+      this.changeScroll();
+    }
   }
-}
 
-setVariables() {
-  this.linkId.forEach(linkId => this.onMouseOut(linkId));
-  this.isAnimating = true;
-  this.menu = !this.menu;
-}
+  animateBurger() {
+    if (this.burgerIndex == 1) {
+      this.openBurger();
+    } else {
+      this.closeBurger();
+    }
+  }
 
-openBurger() {
-  const interval = setInterval(() => {
-    this.burgerIndex < 5 ? this.burgerIndex++ : (clearInterval(interval), this.isAnimating = false);
-  }, 56);
-}
+  changeScroll() {
+    if (this.menu) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'auto';
+    }
+  }
 
-closeBurger() {
-  const interval = setInterval(() => {
-    this.burgerIndex > 1 ? this.burgerIndex-- : (clearInterval(interval), this.isAnimating = false);
-  }, 56);
-}
+  setVariables() {
+    this.isAnimating = true;
+    this.menu = !this.menu;
+  }
 
-onMouseEnter(linkId: string) {
-  this.linkAnimationStates[linkId] = { enter: true, leave: false, down: false };
-}
+  openBurger() {
+    const interval = setInterval(() => {
+      this.burgerIndex < 5 ? this.burgerIndex++ : (clearInterval(interval), this.isAnimating = false);
+    }, 56);
+  }
 
-onMouseOut(linkId: string) {
-  this.linkAnimationStates[linkId] = { enter: false, leave: true, down: false };
-}
+  closeBurger() {
+    const interval = setInterval(() => {
+      this.burgerIndex > 1 ? this.burgerIndex-- : (clearInterval(interval), this.isAnimating = false);
+    }, 56);
+  }
 
-onMouseDown(linkId: string) {
-  this.linkAnimationStates[linkId] = { enter: false, leave: false, down: true };
-}
+  onMouseEnter(linkId: string) {
+    this.linkAnimationStates[linkId] = { enter: true, leave: false, down: false };
+  }
+
+  onMouseOut(linkId: string) {
+    this.linkAnimationStates[linkId] = { enter: false, leave: true, down: false };
+  }
 }

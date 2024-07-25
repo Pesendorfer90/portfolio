@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, ViewChild, Output, EventEmitter, Input } from '@angular/core';
-import { updateVisibility } from './../functions';
+import { updateVisibility } from '../../functions';
 
 @Component({
   selector: 'app-my-skills',

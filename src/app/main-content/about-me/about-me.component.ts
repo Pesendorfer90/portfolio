@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { scrollToElement } from '../functions';
+import { scrollToElement } from '../../functions';
 
 @Component({
   selector: 'app-about-me',

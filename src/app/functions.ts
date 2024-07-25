@@ -10,9 +10,7 @@ export function isElementVisible(arrowTrigger: any): boolean {
   let element = arrowTrigger.nativeElement;
   let rect = element.getBoundingClientRect();
   let windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  let windowWidth = window.innerWidth || document.documentElement.clientWidth;
-  console.log('läuft');
-  
+  let windowWidth = window.innerWidth || document.documentElement.clientWidth;  
 
   let isVisible =
     rect.top >= 0 &&

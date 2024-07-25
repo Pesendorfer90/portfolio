@@ -4,38 +4,42 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './main-content/header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { ArrowComponent } from './arrow/arrow.component';
-import { MySkillsComponent } from './my-skills/my-skills.component';
-import { Arrow2Component } from './arrow2/arrow2.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { Arrow3Component } from './arrow3/arrow3.component';
-import { ContactComponent } from './contact/contact.component';
+import { AboutMeComponent } from './main-content/about-me/about-me.component';
+import { ArrowComponent } from './main-content/arrow/arrow.component';
+import { MySkillsComponent } from './main-content/my-skills/my-skills.component';
+import { Arrow2Component } from './main-content/arrow2/arrow2.component';
+import { PortfolioComponent } from './main-content/portfolio/portfolio.component';
+import { Arrow3Component } from './main-content/arrow3/arrow3.component';
+import { ContactComponent } from './main-content/contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavbarComponent,
     AboutMeComponent,
     ArrowComponent,
     MySkillsComponent,
     Arrow2Component,
     PortfolioComponent,
     Arrow3Component,
-    ContactComponent,
-    FooterComponent,
-    MainContentComponent
+    MainContentComponent,
+    LegalNoticeComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FooterComponent,
+    ContactComponent,
+    NavbarComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

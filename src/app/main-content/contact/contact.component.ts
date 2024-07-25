@@ -1,11 +1,14 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { updateVisibility } from './../functions';
-import { scrollToElement } from '../functions';
-// import { getLocaleMonthNames } from '@angular/common';
+import { FormsModule, NgForm } from '@angular/forms';
+import { updateVisibility } from '../../functions';
+import { scrollToElement } from '../../functions';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })

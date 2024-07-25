@@ -1,1 +1,8 @@
-<p>main-content works!</p>
+<app-header></app-header>
+<app-about-me></app-about-me>
+<app-arrow [arrowTrigger]="isArrowVisible"></app-arrow>
+<app-my-skills (visible)="isArrowVisible = $event"></app-my-skills>
+<app-arrow2 [arrowTrigger2]="isArrowVisible2"></app-arrow2>
+<app-portfolio (visible2)="isArrowVisible2 = $event"></app-portfolio>
+<app-arrow3 [arrowTrigger3]="isArrowVisible3"></app-arrow3>
+<app-contact (visible3)="isArrowVisible3 = $event"></app-contact>

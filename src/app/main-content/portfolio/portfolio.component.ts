@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
-import { updateVisibility } from './../functions';
+import { updateVisibility } from '../../functions';
 
 @Component({
   selector: 'app-portfolio',
