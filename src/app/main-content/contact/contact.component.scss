@@ -446,9 +446,8 @@
     .pull-tab {
         display: none;
     }
-}
 
-@media (max-width: 400px) {
-    
-
+    .arrow-up-container {
+        display: none !important;
+    }
 }
