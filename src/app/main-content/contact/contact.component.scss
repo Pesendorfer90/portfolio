@@ -3,9 +3,10 @@
     background-color: #FFFCF3;
     display: flex;
     flex-direction: column;
+    clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%);
 
-    .menu-footer-content {
-        clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+
+    .greet-container {
         background-color: #000000;
         height: 250px;
         display: flex;
@@ -434,8 +435,17 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .contact-container {
+        clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0% 100%);
+    }
+}
+
 
 @media (max-width: 690px) {
+    .contact-container {
+        clip-path: polygon(0% 0%, 100% 7%, 100% 100%, 0% 100%);
+    }
     
     .greet {
         h2 {
@@ -449,5 +459,11 @@
 
     .arrow-up-container {
         display: none !important;
+    }
+}
+
+@media (max-width: 690px) {
+    .contact-container {
+        clip-path: polygon(0% 0%, 100% 4%, 100% 100%, 0% 100%);
     }
 }

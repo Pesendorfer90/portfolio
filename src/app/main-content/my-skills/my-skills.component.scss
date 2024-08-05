@@ -1,8 +1,8 @@
 .skill-container {
-  width: 90%;
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 140px;
+  width: 1440px;
 }
 
 .border {
@@ -12,8 +12,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 100px 70px 40px 70px;
-  max-width: 1300px;
+  padding: 100px 70px;
 }
 
 .skill-text {
@@ -41,7 +40,7 @@
 }
 
 .skill-icons {
-  margin: 50px 70px 50px 70px;
+  margin: 50px 70px;
   width: 100px;
   display: flex;
   flex-direction: column;
@@ -107,6 +106,33 @@
 }
 
 
+@media (max-width: 1645px) {
+  .skill-container {
+    width: 1215px;
+  }
+
+  .border {
+    padding: 100px 70px 20px 70px;
+  }
+}
+
+
+@media (max-width: 1350px) {
+
+  .skill-container {
+    width: 744px;
+  }
+
+  .border {
+    padding: 75px 15px 0 15px;
+  }
+
+  .skill-icons {
+    margin: 50px 50px;
+  }
+}
+
+
 @media (max-width: 1024px) {
 
   h2 {
@@ -130,22 +156,34 @@
       color: black;
     }
   }
-}
 
-
-@media (max-width: 915px) {
+  .skill-container {
+    width: 712px;
+  }
 
   .border {
-    padding: 10% 2% 4% 2%;
+    padding: 60px 12px 0 12px;
   }
 
   .skill-icons {
-    margin: 7% 8%;
+    margin: 40px 50px;
   }
 }
 
 
-@media (max-width: 690px) {
+@media (max-width: 850px) {
+
+  .skill-container {
+    width: 600px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .skill-container {
+    width: 455px;
+  }
 
   .border {
     padding: 8% 4% 0 4%;
@@ -161,10 +199,18 @@
 }
 
 
-@media (max-width: 490px) {
+@media (max-width: 550px) {
+
+  .skill-container {
+    width: 370px;
+  }
 
   .border {
     padding: 10% 2% 0 2%;
+  }
+
+  h2 {
+    font-size: 35px !important;
   }
 
   .skill-icons {
@@ -175,24 +221,33 @@
       width: 60px;
     }
   }
-
-  h2 {
-    font-size: 35px !important;
-  }
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
+
+  .skill-container {
+    width: 280px;
+  }
 
   .border {
     padding: 12% 0 0 0;
   }
 
-  .skill-icons {
-    margin: 1% 2%;
+  h2 {
+    font-size: 32px !important;
   }
 
-  h2 {
-    font-size: 35px !important;
+  .skill-icons {
+    margin: 1% 2%;
+    width: 72px;
+
+    img {
+      width: 45px;
+    }
+
+    p {
+      font-size: 13px;
+    }
   }
 }
