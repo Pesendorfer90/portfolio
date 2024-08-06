@@ -10,9 +10,9 @@
     </header>
 
     <div class="basic-information">
-        <p class="email" (click)="scrollToArea('contactSection')">pesendorfer.gerald@hotmail.com</p>
+        <p class="email" [routerLink]="['/']" fragment="contactSection" (click)="scrollToArea('contactSection')">pesendorfer.gerald@hotmail.com</p>
 
-        <div class="info-right" (click)="scrollToArea('aboutMe')">
+        <div class="info-right" [routerLink]="['/']" fragment="aboutMe" (click)="scrollToArea('aboutMe')">
             <div class="animation-container">
                 <img src=".\assets\img\arrow.png">
             </div>

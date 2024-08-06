@@ -1,6 +1,8 @@
 <div class="nav-container">
     <div class="top-bar">
-        <img src="./assets/img/logo.png">
+        <button [routerLink]="['/']" fragment="headerUp" (click)="scrollToArea('headerUp')">
+            <img src="./assets/img/logo.png">
+        </button>
         <button (click)="navMenu()">
             <img src="./assets/img/Property{{ burgerIndex }}.png">
         </button>
@@ -9,14 +11,17 @@
 
 <div [class.hide-menu]="menu" class="menu-container">
     <nav #nav>
-        <div id="aboutMeLink" class="border" [routerLink]="['/']" fragment="aboutMe" (click)="scrollToArea('aboutMe')">
-            <a id="aboutMeLinkText">About me</a>
+        <div id="aboutMeLink" class="border" [routerLink]="['/']" fragment="aboutMe"
+        (click)="scrollToArea('aboutMe')">
+            <a>About me</a>
         </div>
-        <div id="mySkillsLink" class="border" [routerLink]="['/']" fragment="mySkills" (click)="scrollToArea('mySkills')">
-            <a id="mySkillsLinkText">My skills</a>
+        <div id="mySkillsLink" class="border" [routerLink]="['/']" fragment="mySkills"
+            (click)="scrollToArea('mySkills')">
+            <a>My skills</a>
         </div>
-        <div id="portfolioLink" class="border" [routerLink]="['/']" fragment="portfolio" (click)="scrollToArea('portfolio')">
-            <a id="portfolioLinkText">Portfolio</a>
+        <div id="portfolioLink" class="border" [routerLink]="['/']" fragment="portfolio"
+            (click)="scrollToArea('portfolio')">
+            <a>Portfolio</a>
         </div>
     </nav>
     <div class="menu-footer">

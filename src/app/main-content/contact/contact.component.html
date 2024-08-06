@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="arrow-up-container">
-                        <div class="arrow-up" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()"
+                        <div class="arrow-up" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseOut()" [routerLink]="['/']" fragment="headerUp"
                             (click)="scrollToArea('headerUp')">
                             <div class="line"
                                 [ngClass]="{'hover-up-line': linkAnimationStates['arrowUp']?.enter, 'reset-down-line': linkAnimationStates['arrowUp']?.leave}">
