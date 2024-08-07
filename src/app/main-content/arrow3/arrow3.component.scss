@@ -1,41 +1,43 @@
 .arrow-container {
-    width: 90%;
     height: 282px;
     display: flex;
     justify-content: flex-end;
-    max-width: 1040px;
+    width: 1040px;
 
     .arrow {
         position: relative;
         width: 215px;
         height: 215px;
 
-        .line {
+        .line-base {
             background-color: black;
             position: absolute;
         }
 
-        .line:nth-child(1) {
+        .line1 {
             width: 215px;
             height: 4px;
             top: 107.50px;
             right: 0px;
             transform: rotate(-45deg);
+            @extend .line-base;
         }
 
-        .line:nth-child(2) {
+        .line2 {
             width: 80px;
             height: 4px;
             bottom: 65px;
             left: -9px;
             transform: rotate(-90deg);
+            @extend .line-base;
         }
 
-        .line:nth-child(3) {
+        .line3 {
             width: 80px;
             height: 4px;
             bottom: 27px;
             left: 29px;
+            @extend .line-base;
         }
 
         .arrow-animation {
@@ -85,5 +87,122 @@
             padding-right: 67px;
         }
     }
+}
 
+
+@media (max-width: 1350px) {
+    .arrow-container {
+        width: 744px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .arrow-container {
+        width: 712px;
+    }
+}
+
+
+@media (max-width: 850px) {
+    .arrow-container {
+        width: 600px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .arrow-container {
+        width: 455px;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .arrow-container {
+        width: 370px;
+        height: 210px;
+        margin-top: 50px;
+
+        .arrow {
+            position: relative;
+            width: 150.5px;
+            height: 150.5px;
+
+            .line1 {
+                width: 150.5px;
+                height: 4px;
+                top: 75.25px;
+                right: 0px;
+            }
+
+            .line2 {
+                width: 56px;
+                height: 4px;
+                bottom: 45.5px;
+                left: -6px;
+            }
+
+            .line3 {
+                width: 56px;
+                height: 4px;
+                bottom: 18.9px;
+                left: 20.3px;
+            }
+
+            .arrow-animation {
+                animation: arrowAnimationResponsive 0.5s ease-in-out forwards;
+            }
+
+            @keyframes arrowAnimationResponsive {
+                0% {
+                    width: 150.5px;
+                }
+
+                50% {
+                    width: 245.5px;
+                    top: 108px;
+                    right: -14px;
+                }
+
+                100% {
+                    width: 150.5px;
+                    top: 141.50px;
+                    right: 66.5px;
+                }
+            }
+        }
+    }
+
+    .arrowAnimation-Container {
+        animation: arrowAnimationContainerResponsive 0.5s ease-in-out forwards !important;
+    }
+
+    @keyframes arrowAnimationContainerResponsive {
+        0% {
+            width: 150.5px;
+            height: 150.5px;
+        }
+
+        50% {
+            width: calc(150.5px + 67px);
+            height: calc(150.5px + 67px);
+            padding-top: 0px;
+            padding-right: 0px;
+        }
+
+        100% {
+            width: 150.5px;
+            height: 150.5px;
+            padding-top: 67px;
+            padding-right: 67px;
+        }
+    }
+}
+
+
+@media (max-width: 450px) {
+    .arrow-container {
+        width: 280px;
+    }
 }

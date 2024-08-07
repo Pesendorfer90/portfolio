@@ -45,7 +45,7 @@ export class ContactComponent implements AfterViewInit {
     updateVisibility(this.arrowTrigger, this.visible3);
   }
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://gerald-pesendorfer.at/sendMail.php',
@@ -75,11 +75,6 @@ export class ContactComponent implements AfterViewInit {
       ngForm.resetForm();
     }
   }
-
-
-
-
-
 
   onMouseEnter() {
     console.log('1');

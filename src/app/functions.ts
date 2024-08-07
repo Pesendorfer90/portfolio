@@ -1,7 +1,6 @@
 export function scrollToElement(elementId: string) {
   let element = document.getElementById(elementId);
   if (element) {
-    // element.scrollIntoView({ behavior: 'smooth' });
     const offset = 100;
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - offset;
@@ -31,4 +30,8 @@ export function isElementVisible(arrowTrigger: any): boolean {
 
 export function updateVisibility(arrowTrigger: any, visible: any) {
   visible.emit(isElementVisible(arrowTrigger));
+}
+
+export function detectTouchDevice(): boolean {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 }
