@@ -13,8 +13,8 @@ export function scrollToElement(elementId: string) {
 }
 
 
-export function isElementVisible(arrowTrigger: any): boolean {
-  let element = arrowTrigger.nativeElement;
+export function isElementVisible(trigger: any): boolean {
+  let element = trigger.nativeElement;
   let rect = element.getBoundingClientRect();
   let windowHeight = window.innerHeight || document.documentElement.clientHeight;
   let windowWidth = window.innerWidth || document.documentElement.clientWidth;  
@@ -28,8 +28,8 @@ export function isElementVisible(arrowTrigger: any): boolean {
     return isVisible;
 }
 
-export function updateVisibility(arrowTrigger: any, visible: any) {
-  visible.emit(isElementVisible(arrowTrigger));
+export function updateVisibility(trigger: any, visible: any) {
+  visible.emit(isElementVisible(trigger));
 }
 
 export function detectTouchDevice(): boolean {

@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild } from '@angular/core';
 import { updateVisibility, detectTouchDevice } from '../../functions';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,7 +8,7 @@ import { updateVisibility, detectTouchDevice } from '../../functions';
   styleUrls: ['./portfolio.component.scss']
 })
 
-export class PortfolioComponent implements AfterViewInit, OnInit {
+export class PortfolioComponent implements AfterViewInit {
   items = [
     {
       image: './assets/img/portfolio-img/epl.png',
@@ -50,12 +51,15 @@ export class PortfolioComponent implements AfterViewInit, OnInit {
       projectLink: ''
     }
   ];
-  
+
   isTouchDevice: boolean = false;
 
-  ngOnInit(): void {
+  visibilityMap: { [key: string]: boolean } = {};
+
+
+  @HostListener('touchstart', ['$event'])
+  onTouchStart() {
     console.log(this.isTouchDevice);
-    
     this.isTouchDevice = detectTouchDevice();
   }
 
@@ -70,5 +74,10 @@ export class PortfolioComponent implements AfterViewInit, OnInit {
 
   onWindowChange() {
     updateVisibility(this.arrowTrigger, this.visible2);
+  }
+
+  onVisibilityChanged(event: { id: string, isIntersecting: boolean }) {
+    this.visibilityMap[event.id] = event.isIntersecting;
+    console.log(`Element ${event.id} is intersecting: ${event.isIntersecting}`);
   }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { IntersectionObserverDirective } from './service/intersection-observer.directive';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     Arrow3Component,
     MainContentComponent,
     LegalNoticeComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    IntersectionObserverDirective
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     FooterComponent,
     ContactComponent,
     NavbarComponent,
+    CommonModule,
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]

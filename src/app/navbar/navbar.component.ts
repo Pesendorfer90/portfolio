@@ -17,7 +17,6 @@ export class NavbarComponent implements OnInit {
   isAnimating: boolean = false;
   linkAnimationStates: { [key: string]: { enter: boolean, leave: boolean, down: boolean } } = {};
   linkId: string[] = ['aboutMeLink', 'mySkillsLink', 'portfolioLink'];
-  // linkTextId: string[] = ['aboutMeLinkText', 'mySkillsLinkText', 'portfolioLinkText'];
   containerSize: number[] = [170, 580, 96];
 
   constructor(private router: Router) { }
